@@ -158,9 +158,12 @@ a{text-decoration: none!important;}
 .fixfloat{content:"."; height:0; display:block; visibility: hidden; clear:both;}
 .fullbox{top:0; right:0; bottom:0; left:0;}
 .fa{display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
-
-.aui-tabs-scroll{ display:block;overflow-y: hidden;overflow-x: scroll; position: fixed;top:44px;right:0;left:0;  z-index:10; background-color: #eee; border-bottom: 1px solid #666;
-  .mui-control-item{display: table-cell; white-space: nowrap; cursor: pointer; width:auto; text-overflow:clip; padding:0 1rem;}
+//overflow-y: hidden;overflow-x: auto;
+.aui-tabs-wrap{ position: fixed;top:44px;right:0;left:0; height:40px;  z-index:10; background-color: #eee;
+  .mui-scroll{ width:auto;}
+}
+.aui-tabs{white-space: nowrap; width:auto!important;
+  .mui-control-item{display:inline-block; white-space: nowrap;  text-overflow:clip; cursor: pointer; width: auto;padding:0 1rem;}
 }
 .aui-control-content{margin-top:42px;}
 

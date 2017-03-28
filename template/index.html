@@ -64,15 +64,20 @@
 	</style>
 	
 	<div class="mui-content">
-			<div class="aui-tabs-scroll mui-segmented-control mui-segmented-control-inverted">
-        		<a class="mui-control-item mui-active" href="#item1mobile">HR-HDTV</a>
-        		<a class="mui-control-item" href="#item2mobile">离线在线</a>
-        		<a class="mui-control-item" href="#item3mobile">WEB-DL中字</a>
-        		<a class="mui-control-item" href="#item4mobile">HDTV</a>
-        		<a class="mui-control-item" href="#item5mobile">720P</a>
-        		<a class="mui-control-item" href="#item6mobile">1080P</a>
-        		<a class="mui-control-item" href="#item7mobile">BD1080P</a>
-			</div>
+			<div class="mui-scroll-wrapper aui-tabs-wrap ">
+                <div class="mui-scroll">
+                    <div class="mui-segmented-control mui-segmented-control-inverted aui-tabs">
+                        <a class="mui-control-item mui-active" href="#item1mobile">HR-HDTV</a>
+                        <a class="mui-control-item" href="#item2mobile">离线在线</a>
+                        <a class="mui-control-item" href="#item3mobile">WEB-DL中字</a>
+                        <a class="mui-control-item" href="#item4mobile">HDTV</a>
+                        <a class="mui-control-item" href="#item5mobile">720P</a>
+                        <a class="mui-control-item" href="#item6mobile">1080P</a>
+                        <a class="mui-control-item" href="#item7mobile">BD1080P</a>
+                    </div>
+                </div>
+            </div>
+			
 				<div id="item1mobile" class="mui-control-content mui-active  aui-control-content">
                         <ul class="mui-table-view">
                             <li class="mui-table-view-cell mui-collapse">
@@ -231,44 +236,52 @@
     </div>
     <div class="fullmask"></div>
 	<script src="../lib/init/loadFiles.js"></script>
-	<script>
-	   $(".aui-downlist li").click(function(){
-	      if($("body").hasClass("aui-links-visable")==false){
-    	      $(".fullmask").show();
-    	      $(this).addClass("aui-downtype-now");
-    	      $(this).find(".aui-downtype").appendTo("body"); 
-	      } 
-	   });
-	   $(".fullmask").click(function(){
-	       $(".aui-downlist li .aui-downtype").attr("style","");
-	       $(this).hide();
-           $("body>.aui-downtype").appendTo(".aui-downtype-now");
-	       $(".aui-downtype-now").removeClass("aui-downtype-now");
-	   });
-	   $("#aui-showFullName").click(function(){
-	       if($(this).hasClass("mui-active")){
-	           $(".aui-downlist").removeClass("aui-downlist-short");
-	       }else{
-	           $(".aui-downlist").addClass("aui-downlist-short");
-	       }
-	   });
-	   $("#aui-showData").click(function(){
-           if($(this).hasClass("mui-active")){
-               $(".aui-downlist").addClass("aui-downlist-hasData");
-           }else{
-               $(".aui-downlist").removeClass("aui-downlist-hasData");
-           }
-       });
-       $("#aui-showLinks").click(function(){
-           if($(this).hasClass("mui-active")){
-               $("body").addClass("aui-links-visable");
-               $(".aui-downlist").addClass("aui-downlist-showLinks");
-           }else{
-               $("body").removeClass("aui-links-visable");
-               $(".aui-downlist").removeClass("aui-downlist-showLinks");
-           }
-       });
-    </script>
 </body>
 </html>
 <script src="../lib/init/loadFiles-after.js"></script>
+<script>
+
+mui('.aui-tabs-wrap').scroll({
+     scrollY: false, //是否竖向滚动
+     scrollX: true, //是否横向滚动
+     indicators: false, //是否显示滚动条
+     deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+     bounce: true //是否启用回弹
+});
+   $(".aui-downlist li").click(function(){
+      if($("body").hasClass("aui-links-visable")==false){
+	      $(".fullmask").show();
+	      $(this).addClass("aui-downtype-now");
+	      $(this).find(".aui-downtype").appendTo("body"); 
+      } 
+   });
+   $(".fullmask").click(function(){
+       $(".aui-downlist li .aui-downtype").attr("style","");
+       $(this).hide();
+       $("body>.aui-downtype").appendTo(".aui-downtype-now");
+       $(".aui-downtype-now").removeClass("aui-downtype-now");
+   });
+   $("#aui-showFullName").click(function(){
+       if($(this).hasClass("mui-active")){
+           $(".aui-downlist").removeClass("aui-downlist-short");
+       }else{
+           $(".aui-downlist").addClass("aui-downlist-short");
+       }
+   });
+   $("#aui-showData").click(function(){
+       if($(this).hasClass("mui-active")){
+           $(".aui-downlist").addClass("aui-downlist-hasData");
+       }else{
+           $(".aui-downlist").removeClass("aui-downlist-hasData");
+       }
+   });
+   $("#aui-showLinks").click(function(){
+       if($(this).hasClass("mui-active")){
+           $("body").addClass("aui-links-visable");
+           $(".aui-downlist").addClass("aui-downlist-showLinks");
+       }else{
+           $("body").removeClass("aui-links-visable");
+           $(".aui-downlist").removeClass("aui-downlist-showLinks");
+       }
+   });
+</script>
