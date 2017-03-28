@@ -1,0 +1,13 @@
+@charset "utf-8";
+@IMPORT url("3rd/icons.css");
+@IMPORT url("3rd/animate.css");
+@IMPORT url("3rd/widgets.css");
+/*
+@IMPORT url("home.css");
+@IMPORT url("portlet.css");
+@IMPORT url("theme.css");
+@IMPORT url("fixed.css");
+@IMPORT url("login.css");
+*/
+body { background:transparent;  color:#666;  font:14px/1.5em arial,"SimHei","Microsoft Yahei","宋体";}
+.test{}

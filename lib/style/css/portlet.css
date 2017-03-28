@@ -1,0 +1,176 @@
+/*首页内容区面板模块设定*/
+.content-home .row{padding:10px 0 0 0;}
+.content-home .row .col-mark{padding:10px;}
+.panel-simple{min-height: 200px; margin:0; position: relative; border: 0; }
+.panel-simple .panel-heading{padding:15px 15px 4px 15px;  }
+.panel-simple .panel-heading .desc a{color:#fff;}
+.panel-simple .panel-heading .desc{ color:#fff; background-color: #999; border-radius:20px; padding:5px 20px;}
+.panel-simple .panel-heading .bg-trans{  padding:5px 10px;}
+
+.panel-simple .panel-heading .unit{float: right; color:#999;}
+.panel-simple .panel-heading .unit .fa{padding:0 10px 0 0;}
+.panel-simple .panel-body{min-height:220px; position: relative;}
+.panel-simple .panel-body .list-group{margin:0; overflow: hidden;}
+.panel-simple .panel-body .list-group .list-group-item{padding:0; overflow: hidden; border: 1px solid #eee;}
+.panel-simple .panel-body .list-group .list-title,
+.panel-simple .panel-body .list-group .list-cont{padding:13px 10px; display:inline-block;}
+.panel-simple .panel-body .list-group .list-title{width:70px;background-color: #f9f9f9; color:#999; font-weight: bold; border-right: 1px solid #eee; text-align: right;}
+.panel-simple .panel-body .list-group .list-cont{font-weight: bold; color:#999; font-family: tahoma;}
+
+.content-home .panel-simple{background-color: rgba(255,255,255,0.9); box-shadow:3px 3px 10px rgba(0,0,0,.4);}
+.content-home .panel-simple .nav-tabs{border-color: #ccc;}
+.content-home .panel-simple .nav-tabs > li > a {padding:8px 15px 7px 15px;background-color:transparent;}
+.content-home .panel-simple .nav-tabs > li > a:hover,
+.content-home .panel-simple .nav-tabs > li.active > a { border-color: #ccc;}
+.content-home .panel-simple .panel-body{height:300px;}
+
+.panel-custom .panel-heading .unit{}
+.panel-custom .panel-heading{ padding:0; height:0; margin:0;}
+.panel-custom .panel-heading .position-left,
+.panel-custom .panel-heading .position-right,
+.panel-custom .panel-heading .position-top,
+.panel-custom .panel-heading .position-bottom,
+.panel-custom .panel-heading .position-center{position:absolute; white-space: nowrap; z-index: 20; }
+.panel-custom .position-left{left:10px;}
+.panel-custom .position-right{right:10px;}
+.panel-custom .position-top{top:10px;}
+.panel-custom .position-bottom{bottom:10px;}
+.panel-custom .position-center{left:50%; width:140px;margin-left:-70px; padding:5px 0; text-align: center;}
+.panel-custom .panel-body{padding:5px;}
+
+.panel-trans{margin:0; background-color: rgba(255,255,255,.0); box-shadow:none; border-radius:0;border-bottom: 2px solid rgba(255,255,255,.5);}
+.panel-trans .panel-body{padding:0px;}
+/*
+.panel-custom .panel-heading .position-left.position-top{border-radius:4px 0 15px 0;}
+.panel-custom .panel-heading .position-right.position-top{border-radius:0 0 0 20px;}
+.position-top{}
+.position-bottom
+*/
+.duty-list{display: block;  width: 100%;table-layout: fixed;border-collapse: separate; list-style: none; margin-bottom: 0!important;}
+.duty-list li{display: table-cell;  float: none;width: 1%; text-align: center;}
+.duty-list li .duty-detail{position: relative; margin: 0 auto 0 auto; border: 2px solid rgba(255,255,255,1); background-color: rgba(255,255,255,.8); width:90%; height:260px; border-radius:10px; padding:20px 0 0 0;}
+.duty-list li .duty-detail p{font-size: 100%; }
+.duty-list li .duty-detail img{margin:4.5vh 0 0 0; width: 80%; max-width: 80px; border: 3px solid rgba(0,0,0,.1); padding:2px; border-radius:100%;}
+.duty-list li .duty-detail .tag{font-size: 1.5vw; margin:3.5vh 0 2vh 0; color:rgba(0,0,0,.4);}
+.duty-list li .duty-detail .phone{font-size: 1vw; margin:2.5vh 0 0 0; color:rgba(0,0,0,.3);}
+.duty-list li .duty-detail .type{position: absolute;  background-color: rgba(0,0,0,.05); color:rgba(0,0,0,.3); top:15px; padding:5px 10px; left:0;  margin:0;  border-radius:0 80px 80px 0; }
+.duty-list li .duty-detail .type{}
+.duty-list li .duty-detail .now{font-size: .9em; color:rgba(0,0,0,.5);display:none; position: absolute; bottom:-20px; margin:0 0 0 -20px; border-radius:30px; left:50%; width:40px; height:40px; line-height: 36px; border: 2px solid rgba(102,173,233,.6); background-color: #fff;}
+.duty-list li .duty-now{/*background-color: rgba(213,243,241,1);*/ border: 2px solid rgba(102,173,233,.6);}
+.duty-list li .duty-now .now{ display:block;}
+
+.croom-list{display: block;  width: 100%;table-layout: fixed;border-collapse: separate; list-style: none; margin-bottom: 0!important;}
+.croom-list li{display: table-cell;  float: none;width: 1%; text-align: center;}
+.croom-list li .croom-detail{position: relative;margin:0 auto 20px auto;  border: 2px solid rgba(255,255,255,1); background-color: rgba(255,255,255,.8); width:90%; height:120px; border-radius:10px; padding:10px 0 0 0;}
+.croom-list li .croom-detail{}
+.croom-list li .croom-detail p{font-size: 100%; }
+.croom-list li .croom-detail .compName{font-size: 1.2em;  color:rgba(0,0,0,.4);}
+.croom-list li .croom-detail .temmois .fa{margin:0 0 0 10px;}
+.croom-list li .croom-detail .airwater .fa:last-child{margin: 0 0 0 10px;}
+.croom-list li .croom-detail .temmois{}
+.croom-list li .croom-detail .airwater{}
+
+.select-wrap{position: relative; width:100%; min-height: 300px;display: block; table-layout: fixed;border-collapse: separate; list-style: none; }    
+.select-wrap .select-group{display: table-cell; float: none;width: 1%;}  
+.select-wrap .select-group .list-group{ border: 1px solid #ddd;margin:5px; border-radius:5px; overflow: auto; height:265px;} 
+.select-wrap .select-group .list-group li{border: none; border-bottom: 1px solid #ddd!important; margin: 0; padding:7px 10px;}  
+.select-wrap .select-group .list-group li input{margin:0 10px 0 0;}
+.select-wrap .select-group .list-group li:hover{background-color: #d0f1ff;}
+.select-wrap .select-group .list-group li.active{background-color: #a7e3fd;}
+.select-wrap .select-group{}  
+
+
+.panel-alert-num{height:36px; position: relative;}
+.alert-num{position: absolute; width: 700px; left:0; top:0;}
+.alert-num li{float: left; margin:0 20px 0 0;}
+.alert-num li span{float: left;}
+.alert-num li .title{color:#ddd; margin:0 0 0 0;}
+.alert-num li .num{font-size: 2em; padding: 0 15px 10px 0; position: relative;}
+.alert-num li .num .num-minus{ font-size: .5em; position: absolute; right:-5px; width: 20px; top:-5px; text-align: left; display:block; }
+.alert-num li .desc{color:#ddd; }
+.alert-num li:last-child{margin:0;}
+
+/*告警总览topbar start*/
+.alert-realtime{margin: 0 0 0 670px;}
+.alert-realtime li{display:none; text-align: left; color:#ddd; white-space:nowrap; text-overflow: ellipsis; overflow: hidden;}
+.alert-realtime li:first-child{display:block;}
+.alert-realtime-test{opacity:0.5; position: absolute; right:0; top:0; background-color: #666; border: 1px solid #ddd; color:#ddd; padding:0 10px; border-radius:10px;cursor: pointer;}
+.alert-realtime-test:hover{border: 1px solid #fff;color:#fff;}
+
+@media (max-width: 800px){
+.alert-realtime-title,
+.alert-realtime{display:none;}
+}
+/*告警总览topbar end*/
+
+/*告警总览仪表板 start*/
+.alert-num-boxed{ margin:5px 0 15px  0; text-align: center;border: 1px solid rgba(0,0,0,0.05); line-height: 3.5em;  box-shadow: rgba(255,255,255,0.3) 0 3px 0; background-color: rgba(0,0,0,0.07); border-radius:5px;}
+.alert-num-boxed  li{display:inline; margin:0 10px 0 0;}
+.alert-num-boxed  li:after{}
+.alert-num-boxed  li span{vertical-align:middle; white-space: nowrap;}
+.alert-num-boxed  li .num{font-size: 2em;}
+.alert-num-boxed  li .title,
+.alert-num-boxed  li .desc{}    
+@media (max-width: 1280px){
+.alert-num-boxed  .alert-newActive{display:none;}
+}
+@media (max-width: 992px){
+.alert-num-boxed  .alert-newActive{display:inline;}
+}
+/*告警总览仪表板 end*/
+
+/*panel tabs start*/
+.panel-heading-tabs{}	
+.panel-heading-tabs li{float: left;  }	
+.panel-heading-tabs li:after{content:"|";color:#ccc;}	
+.panel-heading-tabs li:last-child:after{content:"";}	
+.panel-heading-tabs li.active{font-weight: bold;}
+.panel-heading-tabs li a{background-color: transparent!important; display:inline;}
+.panel-heading-tabs li:last-child a{padding:10px 0 10px 15px;}
+/*panel tabs end*/
+
+/*table level start*/
+.table-level-matrix tbody{}
+.table-level-matrix thead th{text-align: center;}
+.table-level-matrix thead th:first-child{text-align: right;}
+.table-level-matrix tbody th{text-align: right;}
+.table-level-matrix tbody td{text-align: center;}
+.table-level-matrix tbody td span{padding:3px 5px; border-radius:3px; color:#fff;}
+/*table level end*/
+
+
+/*矩阵图标 start*/
+.matrix-icon{margin:0;}
+.matrix-icon .col-mark{text-align: center; padding:15px 0;}
+.matrix-icon .col-mark:hover{background-color: #f5f5f5;}
+.matrix-icon .col-mark .desc{white-space: nowrap;}
+.matrix-icon .col-mark .time{white-space: nowrap; color:#aaa;}
+.matrix-icon .fa{font-size: 2em;text-align: center;margin:0 0 10px 0; background-color: #ccc; color:#fff; padding:16px 0 0 0; width:60px;height:60px; border-radius:30px;}
+.matrix-icon .col-mark:hover .fa{background-color: #66ade9;}
+.matrix-icon .col-mark:hover .desc{color: #66ade9;}
+
+.matrix-green .fa{background-color: #4bb6af;}
+.matrix-green .col-mark:hover .fa{background-color: #7dc9c4;}
+.matrix-green .col-mark:hover .desc{color: #4bb6af;}
+.matrix-cyan .fa{background-color: #23b8dd;}
+.matrix-cyan .col-mark:hover .fa{background-color: #8cd6e8;}
+.matrix-cyan .col-mark:hover .desc{color: #23b8dd;}
+.matrix-blue .fa{background-color: #66ade9;}
+.matrix-blue .col-mark:hover .fa{background-color: #abd3f5;}
+.matrix-blue .col-mark:hover .desc{color: #66ade9;}
+.matrix-yellow .fa{background-color: #f0d438;}
+.matrix-yellow .col-mark:hover .fa{background-color: #f5e485;}
+.matrix-yellow .col-mark:hover .desc{color: #f0d438;}
+.matrix-orange .fa{background-color: #fda128;}
+.matrix-orange .col-mark:hover .fa{background-color: #fbcd92;}
+.matrix-orange .col-mark:hover .desc{color: #fda128;}
+.matrix-purple .fa{background-color: #a49ef0;}
+.matrix-purple .col-mark:hover .fa{background-color: #c7c3f8;}
+.matrix-purple .col-mark:hover .desc{color: #a49ef0;}
+.matrix-pink .fa{background-color: #ff55b5;}
+.matrix-pink .col-mark:hover .fa{background-color: #fb95ce;}
+.matrix-pink .col-mark:hover .desc{color: #ff55b5;}
+.matrix-red .fa{background-color: #f14343;}
+.matrix-red .col-mark:hover .fa{background-color: #f98d8d;}
+.matrix-red .col-mark:hover .desc{color: #f14343;}
+/*矩阵图标 end*/

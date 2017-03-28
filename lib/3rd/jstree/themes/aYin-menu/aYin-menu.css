@@ -1,0 +1,18 @@
+.jstree-menu>.jstree-container-ul .jstree-node>.jstree-icon{
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transform: translate(0, 0);
+  font-size: 14px;
+  }
+
+.jstree-menu{}
+.jstree-menu>.jstree-container-ul{}
+.jstree-menu>.jstree-container-ul .jstree-node>.jstree-icon{float: right; padding:5px 0 0 0; background: none; margin-right:1rem;  transition: all .5s cubic-bezier(0.78, 0.02, 0.2, 1), z-index 0s 0.12s;}
+.jstree-menu>.jstree-container-ul .jstree-node>.jstree-icon:hover{color:#fff;}
+.jstree-menu>.jstree-container-ul .jstree-node.jstree-closed>.jstree-icon:before{content:"\f196";}
+.jstree-menu>.jstree-container-ul .jstree-node.jstree-open>.jstree-icon:before{content:"\f147";}
+
+
