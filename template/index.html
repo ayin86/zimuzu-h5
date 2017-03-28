@@ -56,13 +56,13 @@
 	<header class="mui-bar mui-bar-nav">
 		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
 		<h1 class="mui-title">行尸走肉下载列表</h1>
-		<a id="menu" class="mui-action-menu mui-icon mui-icon-bars mui-pull-right" href="#topPopover"></a>
+		<a id="menu" class="fa fa-navicon mui-icon mui-pull-right" href="#topPopover"></a>
 		
 	</header>
 	<style type="text/css" media="screen">
 		
 	</style>
-	<div class="fullmask"></div>
+	
 	<div class="mui-content">
 			<div class="aui-tabs-scroll mui-segmented-control mui-segmented-control-inverted">
         		<a class="mui-control-item mui-active" href="#item1mobile">HR-HDTV</a>
@@ -228,19 +228,22 @@
                 </ul>
             </div>
         </div>
-
     </div>
+    <div class="fullmask"></div>
 	<script src="../lib/init/loadFiles.js"></script>
 	<script>
 	   $(".aui-downlist li").click(function(){
 	      if($("body").hasClass("aui-links-visable")==false){
     	      $(".fullmask").show();
-    	      $(this).find(".aui-downtype").show(); 
+    	      $(this).addClass("aui-downtype-now");
+    	      $(this).find(".aui-downtype").appendTo("body"); 
 	      } 
 	   });
 	   $(".fullmask").click(function(){
 	       $(".aui-downlist li .aui-downtype").attr("style","");
 	       $(this).hide();
+           $("body>.aui-downtype").appendTo(".aui-downtype-now");
+	       $(".aui-downtype-now").removeClass("aui-downtype-now");
 	   });
 	   $("#aui-showFullName").click(function(){
 	       if($(this).hasClass("mui-active")){

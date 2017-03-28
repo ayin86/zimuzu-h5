@@ -1,5 +1,6 @@
 @charset "utf-8";
 @IMPORT url("../../../icons/font-awesome/css/font-awesome.css");
+@IMPORT url("//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css");/*解决某些情况下无法加载font-awesome*/
 @IMPORT url("../../../icons/Linearicons-Free/style.css");
 @IMPORT url("../../../icons/IcoMoon-Free/Font/demo-files/demo.css");
 
