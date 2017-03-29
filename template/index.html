@@ -163,20 +163,35 @@
                             <li class="mui-table-view-cell mui-collapse">
                                 <a class="mui-navigate-right" href="#">第四季 Season 4</a>
                                 <div class="mui-collapse-content">
-                                    <ul class="aui-downlist">
-                                        <li>
-                                            行尸走肉.The.Walking.Dead.S07E01.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">1天前</span>
+                                    <ul class="aui-watchlist mui-grid-view">
+                                        <li class="mui-col-xs-4">
+                                            <div class="desc">第17集</div>
                                             <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/>百度云</li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/>ACFUN</li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/>Bilibili</li>
+                                                <li class="mui-col-xs-6 mui-col-sm-6"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/>ACFUN</li>
+                                                <li class="mui-col-xs-6 mui-col-sm-6"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/>Bilibili</li>
+                                                <li class="mui-col-xs-6 mui-col-sm-6"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/>其他播放源</li>
                                             </ul>
                                         </li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E02.中英字幕.WEB-HR.AAC.1024X576.x264.mp4<span class="data">1天前</span></li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E03.中英字幕.WEB-HR.AAC.1024X576.x264.mp4<span class="data">1天前</span></li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E04.中英字幕.WEB-HR.AAC.1024X576.x264.mp4<span class="data">1天前</span></li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E05.中英字幕.WEB-HR.AAC.1024X576.x264.mp4<span class="data">1天前</span></li>
+                                        <li class="mui-col-xs-4">
+                                            <div class="desc">第16集</div>
+                                            <ul class="aui-downtype mui-grid-view ">
+                                                <li class="mui-col-xs-6 mui-col-sm-6"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/>ACFUN</li>
+                                                <li class="mui-col-xs-6 mui-col-sm-6"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/>Bilibili</li>
+                                            </ul>
+                                        </li>
+                                        <li class="mui-col-xs-4">
+                                            <div class="desc">第15集</div>
+                                            <ul class="aui-downtype mui-grid-view ">
+                                                <li class="mui-col-xs-6 mui-col-sm-6"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/>ACFUN</li>
+                                                <li class="mui-col-xs-6 mui-col-sm-6"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/>Bilibili</li>
+                                            </ul>
+                                        </li>
+                                        <li class="mui-col-xs-4">
+                                            <div class="desc">第14集</div>
+                                            <ul class="aui-downtype mui-grid-view ">
+                                                <li class="mui-col-xs-6 mui-col-sm-6"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/>ACFUN</li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </div>
                             </li>
@@ -248,7 +263,7 @@ mui('.aui-tabs-wrap').scroll({
      deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
      bounce: true //是否启用回弹
 });
-   $(".aui-downlist li").click(function(){
+   $(".aui-downlist li,.aui-watchlist li").click(function(){
       if($("body").hasClass("aui-links-visable")==false){
 	      $(".fullmask").show();
 	      $(this).addClass("aui-downtype-now");
@@ -278,10 +293,10 @@ mui('.aui-tabs-wrap').scroll({
    $("#aui-showLinks").click(function(){
        if($(this).hasClass("mui-active")){
            $("body").addClass("aui-links-visable");
-           $(".aui-downlist").addClass("aui-downlist-showLinks");
+           $(".aui-downlist,.aui-watchlist").addClass("aui-downlist-showLinks");
        }else{
            $("body").removeClass("aui-links-visable");
-           $(".aui-downlist").removeClass("aui-downlist-showLinks");
+           $(".aui-downlist,.aui-watchlist").removeClass("aui-downlist-showLinks");
        }
    });
 </script>
