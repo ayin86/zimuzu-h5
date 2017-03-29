@@ -40,7 +40,7 @@
                 padding-right: 10px;
             }
             .mui-popover {
-                height: 140px;
+                height: 180px;
             }
             
         </style>
@@ -195,15 +195,27 @@
                                         <li class="mui-col-xs-4">
                                             <div class="desc">第15集</div>
                                             <ul class="aui-downtype mui-grid-view ">
+                                                <li class="mui-col-xs-12 aui-main-btn">
+                                                    <div class="aui-btn-group">
+                                                      <a href="" class="mui-btn"><i class="fa fa-inbox"></i><span class="desc">离线缓存</span></a>
+                                                      <a href="" class="mui-btn"><i class="fa fa-play-circle"></i><span class="desc">在线播放</span></a>
+                                                    </div>
+                                                </li>
                                                 <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/><span class="desc">ACFUN</span></li>
                                                 <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/><span class="desc">Bilibili</span></li>
+                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/><span class="desc">百度云</span></li>
                                                 <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/><span class="desc">百度云</span></li>
                                             </ul>
                                         </li>
                                         <li class="mui-col-xs-4">
                                             <div class="desc">第14集</div>
                                             <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/><span class="desc">Bilibili</span></li>
+                                                <li class="mui-col-xs-12 aui-main-btn">
+                                                    <div class="aui-btn-group">
+                                                      <a href="" class="mui-btn"><i class="fa fa-inbox"></i><span class="desc">离线缓存</span></a>
+                                                      <a href="" class="mui-btn"><i class="fa fa-play-circle"></i><span class="desc">在线播放</span></a>
+                                                    </div>
+                                                </li>
                                                 <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/><span class="desc">百度云</span></li>
                                             </ul>
                                         </li>
@@ -259,7 +271,7 @@
                             <div class="mui-switch-handle"></div>
                         </div>
                     </li>
-                    </li>
+                    <li class="mui-table-view-cell" onclick="alert('done')">分享本页面</li>
                 </ul>
             </div>
         </div>
@@ -270,7 +282,7 @@
 </html>
 <script src="../lib/init/loadFiles-after.js"></script>
 <script>
-
+mui.toast('本页面于18小时23分钟后过期');
 mui('.aui-tabs-wrap').scroll({
      scrollY: false, //是否竖向滚动
      scrollX: true, //是否横向滚动
