@@ -123,7 +123,7 @@ a{text-decoration: none!important;}
 //bg
 .bg-white(@p:100%){background-color:fade(@white,@p);}
 .bg-black(@p:100%){background-color:fade(@black,@p);}
-.bg-transparent{background-color: transparent;}
+.bg-t{background-color: transparent;}
 .bg-f5{background-color:lighten(@black,95%);}
 
 .bg-unknow{background-color:lighten(@black,70%)!important;}/* level -1 */
@@ -158,7 +158,14 @@ a{text-decoration: none!important;}
 .fixfloat{content:"."; height:0; display:block; visibility: hidden; clear:both;}
 .fullbox{top:0; right:0; bottom:0; left:0;}
 .fa{display: inline-block;font: normal normal normal 14px/1 FontAwesome;font-size: inherit;text-rendering: auto;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing: grayscale;}
+.block-group{display:table;
+  li{display:table-cell; width: 1%;
+    .mui-btn{width: 100%;}
+  }
+}
 //overflow-y: hidden;overflow-x: auto;
+.mui-content{height: 100%;}
+.mui-bar{background-color: @white;}
 .aui-tabs-wrap{ position: fixed;top:44px;right:0;left:0; height:50px;  z-index:10; background-color: #eee;
   .mui-scroll{ width:auto;}
 }
@@ -241,3 +248,57 @@ a{text-decoration: none!important;}
   a{color:#fff;}
 }
 .mui-toast-container{bottom:1.5rem;}
+//------------------------------------------------------downlist.html
+.fullhtmlbody{width: 100%;height: 100%;margin: 0px; padding: 0px;}
+.ui-page-login{.fullhtmlbody; 
+  body{.fullhtmlbody;}
+  .withBG{background-image: url(../images/bg.jpg); background-size:100% 100%; height:auto; min-height:100%;}
+}
+.login-content{padding:0 2rem; max-width: 500px; margin:0 auto; height:100%;}
+.login-logo{margin:0 auto; text-align: center; padding:2rem 0 0 0;
+  img{width: 5rem; margin-bottom:1rem;}
+  p{}
+  .logo-title-chs{font-size: 3rem; color:@black;}
+  .logo-title-site{}
+}
+#login-form{.bg-t;
+  .mui-input-row{border:1px solid @gray-lrr;margin-top:1rem; background-color: #fff;
+    .mui-input{border: none;}
+  }
+  .mui-table-view{border:1px solid @gray-lrr;}
+}
+.login-footer-info{ text-align: center;padding:2rem 0;  width: 100%; .ts-white}
+//------------------------------------------------------login.html,register.html,forgetpass.html
+
+.side-btn{ margin:1rem;
+  li{padding:.5rem; 
+    .mui-btn{line-height: 2rem;}
+  }
+}
+
+.side-menu-wrap{
+  .side-menu{>li{>a{>i{padding:0 1rem 0 0;}}}}
+  .side-fotter-info{position: absolute; bottom:1rem;width: 100%;left:0; color:@gray-dr; text-align: center;}
+}
+.panel{
+  .panel-header{text-align: center;
+    .title{background-color: #9aa5b4; color:@white;margin:1rem 0 0 1rem; padding:.5rem 1rem; .bdr(2rem); display:inline-block;}
+  }
+  .panel-body{}
+}
+/*panel panel-today-tvplay">
+                        <div class="panel-header"><span class="title">今日推荐-美剧</span></div>
+                        <div class="panel-body">*/
+.play-list-wrap{height:180px; position: static;
+  .mui-scroll{width:auto;}
+}
+.play-list{white-space: nowrap;padding:1rem;
+  >li{display:inline-block; white-space: nowrap; overflow: hidden; position: relative; margin:0 .5rem;.bdr; padding:0 0 2rem;
+    img{ height:140px;max-width: 100px;.bdr; border: 1px solid #ccc;}
+    .desc{text-align: center; color:@black;  white-space:nowrap;overflow: hidden;margin: 0; text-overflow: ellipsis; position: absolute; left:0; right:0;bottom:0; }
+    .count{position: absolute; right:-18px; top:-4px; width: 50px; color:@white;line-height: 1rem;padding: 8px 0 5px 0; background-color: fade(@blue,70%); text-align: center; transform:rotate(45deg);font-family: arial;}
+  &:first-child{.count{background-color: fade(@red,70%); color:@white;}}
+  }
+}
+
+

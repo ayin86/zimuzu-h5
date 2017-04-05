@@ -1,346 +1,218 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="utf-8">
-	<title>Hello MUI</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="apple-mobile-web-app-status-bar-style" content="black">
-    
-	
+<meta charset="utf-8">
+<title>首页</title>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+<script src="../lib/init/loadFiles.js"></script>
 </head>
 <body>
-    <style>
-            .mui-plus .plus{
-                display: inline;
-            }
-            
-            .plus{
-                display: none;
-            }
-            
-            #topPopover {
-                position: fixed;
-                top: 16px;
-                right: 6px;
-            }
-            #topPopover .mui-popover-arrow {
-                left: auto;
-                right: 6px;
-            }
-            p {
-                text-indent: 22px;
-            }
-            span.mui-icon {
-                font-size: 14px;
-                color: #007aff;
-                margin-left: -15px;
-                padding-right: 10px;
-            }
-            .mui-popover {
-                height: 180px;
-            }
-            
-        </style>
-	<style>
-		.mui-control-content {
-			background-color: white;
-			min-height: 215px;
-		}
-		.mui-control-content .mui-loading {
-			margin-top: 50px;
-		}
-	</style>
-	<header class="mui-bar mui-bar-nav">
-		<a class="mui-action-back mui-icon mui-icon-left-nav mui-pull-left"></a>
-		<h1 class="mui-title">行尸走肉下载列表</h1>
-		<a id="menu" class="fa fa-navicon mui-icon mui-pull-right" href="#topPopover"></a>
-		
-	</header>
-	<style type="text/css" media="screen">
-		
-	</style>
-	
-	<div class="mui-content">
-			<div class="mui-scroll-wrapper aui-tabs-wrap ">
+    <div id="offCanvasWrapper" class="mui-off-canvas-wrap mui-draggable">
+        <!--侧滑菜单部分-->
+        <aside id="offCanvasSide" class="mui-off-canvas-left side-menu-wrap">
+            <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                    <div class="mui-segmented-control mui-segmented-control-inverted aui-tabs">
-                        <a class="mui-control-item mui-active" href="#item1mobile">HR-HDTV</a>
-                        <a class="mui-control-item" href="#item2mobile">离线在线</a>
-                        <a class="mui-control-item" href="#item3mobile">WEB-DL中字</a>
-                        <a class="mui-control-item" href="#item4mobile">HDTV</a>
-                        <a class="mui-control-item" href="#item5mobile">720P</a>
-                        <a class="mui-control-item" href="#item6mobile">1080P</a>
-                        <a class="mui-control-item" href="#item7mobile">BD1080P</a>
-                    </div>
+                    <ul class="block-group side-btn">
+                        <li><a class="mui-btn mui-btn-primary" href="login.html">登录</a></li>
+                        <li><a class="mui-btn mui-btn-primary" href="register.html">注册</a></li>
+                    </ul>
+                    
+                    <ul class="mui-table-view mui-table-view-chevron mui-table-view-inverted side-menu">
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right"><i class="fa fa-home"></i>首页</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right"><i class="fa fa-film"></i>影视</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right"><i class="fa fa-compass"></i>发现</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right"><i class="fa fa-star"></i>收藏</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right"><i class="fa fa-user"></i>我的</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right"><i class="fa fa-bookmark"></i>关于</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-			
-				<div id="item1mobile" class="mui-control-content mui-active  aui-control-content">
-                        <ul class="mui-table-view">
-                            <li class="mui-table-view-cell mui-collapse  mui-active">
-                                <a class="mui-navigate-right" href="#">第四季 Season 4</a>
-                                <div class="mui-collapse-content">
-                                    <ul class="aui-downlist">
+            <div class="side-fotter-info">人人影视旗下产品</div>
+        </aside>
+        <!--主界面部分-->
+        <div class="mui-inner-wrap">
+            <header class="mui-bar mui-bar-nav">
+                <a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
+                <a class=" mui-icon mui-action-menu  mui-icon-search  mui-pull-right"></a>
+                <h1 class="mui-title">首页</h1>
+            </header>
+                     
+            <div class="mui-content mui-scroll-wrapper main-scroll">
+                <div class="mui-scroll">
+                    <div class="panel panel-today-tvplay">
+                        <div class="panel-header"><span class="title">今日推荐-美剧</span></div>
+                        <div class="panel-body">
+                            <div class="mui-scroll-wrapper play-list-wrap">
+                                <div class="mui-scroll">
+                                    <ul class="play-list">
                                         <li>
-                                            行尸走肉.The.Walking.Dead.S07E17.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">3分钟前</span>
-                                            <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-4 mui-col-sm-3" onclick="alert(1)"><img src="../lib/style/images/icons/emule.png" class="aui-icon"/><span class="desc">电驴</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3" onclick="alert(2)"><i class="fa fa-magnet t-red"></i><span class="desc">磁力</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3" onclick="alert(3)"><i class="fa fa-cloud  t-blue"></i><span class="desc">网盘</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3" onclick="alert(4)"><img src="../lib/style/images/icons/ct.png" class="aui-icon"/><span class="desc">城通</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3" onclick="alert(5)"><img src="../lib/style/images/icons/mi.png" class="aui-icon"/><span class="desc">小米路由</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3" onclick="alert(6)"><i class="fa fa-file-text  t-green"></i><span class="desc">字幕</span></li>
-                                            </ul>
+                                            <span class="count">1</span>
+                                            <img src="../lib/style/images/tvplay/tvplay1.jpg" alt="" />
+                                            <p class="desc">行尸走肉</p>
                                         </li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E16.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">1天前</span>
-                                            <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/emule.png" class="aui-icon"/>电驴</li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/ct.png" class="aui-icon"/>城通</li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/mi.png" class="aui-icon"/>小米路由</li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><i class="fa fa-file-text  t-green"></i>字幕</li>
-                                            </ul>
+                                        <li>
+                                            <span class="count">2</span>
+                                            <img src="../lib/style/images/tvplay/tvplay2.jpg" alt="" />
+                                            <p class="desc">浮生若寄</p>
                                         </li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E15.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">1周前</span>
-                                            <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/emule.png" class="aui-icon"/>电驴</li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/ct.png" class="aui-icon"/>城通</li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/mi.png" class="aui-icon"/>小米路由</li>
-                                            </ul>
+                                        <li>
+                                            <span class="count">3</span>
+                                            <img src="../lib/style/images/tvplay/tvplay3.jpg" alt="" />
+                                            <p class="desc">谍网</p>
                                         </li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E14.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">1月前</span>
+                                        <li>
+                                            <span class="count">4</span>
+                                            <img src="../lib/style/images/tvplay/tvplay4.jpg" alt="" />
+                                            <p class="desc">全境通告</p>
                                         </li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E13.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">1月前</span>
+                                        <li>
+                                            <span class="count">5</span>
+                                            <img src="../lib/style/images/tvplay/tvplay5.jpg" alt="" />
+                                            <p class="desc">世界上最后一个男人</p>
                                         </li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E12.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">2月前</span>
+                                        <li>
+                                            <span class="count">6</span>
+                                            <img src="../lib/style/images/tvplay/tvplay6.jpg" alt="" />
+                                            <p class="desc">衰姐们</p>
                                         </li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E11.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">1年前</span>
+                                        <li>
+                                            <span class="count">7</span>
+                                            <img src="../lib/style/images/tvplay/tvplay7.jpg" alt="" />
+                                            <p class="desc">开心汉堡店</p>
                                         </li>
-                                        <li>行尸走肉.The.Walking.Dead.S07E10.中英字幕.WEB-HR.AAC.1024X576.x264.mp4
-                                            <span class="data">2年前</span>
+                                        <li>
+                                            <span class="count">8</span>
+                                            <img src="../lib/style/images/tvplay/tvplay8.jpg" alt="" />
+                                            <p class="desc">谍网</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">9</span>
+                                            <img src="../lib/style/images/tvplay/tvplay9.jpg" alt="" />
+                                            <p class="desc">浮生若寄</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">10</span>
+                                            <img src="../lib/style/images/tvplay/tvplay10.jpg" alt="" />
+                                            <p class="desc">谍网</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">11</span>
+                                            <img src="../lib/style/images/tvplay/tvplay11.jpg" alt="" />
+                                            <p class="desc">谍网</p>
                                         </li>
                                         
                                     </ul>
                                 </div>
-                            </li>
-                            <li class="mui-table-view-cell mui-collapse">
-                                <a class="mui-navigate-right" href="#">第三季 Season 3</a>
-                                <div class="mui-collapse-content">
-                                    <ul class="aui-downlist">
-                                        <li>行尸走肉.The.Walking.Dead.S07E01.中英字幕.WEB-HR.AAC.1024X576.x264.mp4<span class="data">1天前</span></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="mui-table-view-cell mui-collapse">
-                                <a class="mui-navigate-right" href="#">第二季 Season 2</a>
-                                <div class="mui-collapse-content">
-                                    <ul class="aui-downlist">
-                                        <li>行尸走肉.The.Walking.Dead.S07E01.中英字幕.WEB-HR.AAC.1024X576.x264.mp4<span class="data">1天前</span></li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="mui-table-view-cell mui-collapse">
-                                <a class="mui-navigate-right" href="#">第一季 Season 1</a>
-                                <div class="mui-collapse-content">
-                                    <ul class="aui-downlist">
-                                        <li>行尸走肉.The.Walking.Dead.S07E01.中英字幕.WEB-HR.AAC.1024X576.x264.mp4<span class="data">1天前</span></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-				</div>
-				<div id="item2mobile" class="mui-control-content aui-control-content">
-					<ul class="mui-table-view">
-                            <li class="mui-table-view-cell mui-collapse  mui-active">
-                                <a class="mui-navigate-right" href="#">第四季 Season 4</a>
-                                <div class="mui-collapse-content">
-                                    <ul class="aui-watchlist mui-grid-view">
-                                        <li class="mui-col-xs-4">
-                                            <div class="desc">第17集</div>
-                                            <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-12 aui-main-btn">
-                                                    <div class="aui-btn-group">
-                                                      <a href="" class="mui-btn"><i class="fa fa-inbox"></i><span class="desc">离线缓存</span></a>
-                                                      <a href="" class="mui-btn"><i class="fa fa-play-circle"></i><span class="desc">在线播放</span></a>
-                                                    </div>
-                                                </li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/><span class="desc">ACFUN</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/><span class="desc">Bilibili</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/><span class="desc">百度云</span></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mui-col-xs-4">
-                                            <div class="desc">第16集</div>
-                                            <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-12 aui-main-btn">
-                                                    <div class="aui-btn-group">
-                                                      <a href="" class="mui-btn"><i class="fa fa-inbox"></i><span class="desc">离线缓存</span></a>
-                                                      <a href="" class="mui-btn"><i class="fa fa-play-circle"></i><span class="desc">在线播放</span></a>
-                                                    </div>
-                                                </li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/><span class="desc">ACFUN</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/><span class="desc">Bilibili</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/><span class="desc">百度云</span></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mui-col-xs-4">
-                                            <div class="desc">第15集</div>
-                                            <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-12 aui-main-btn">
-                                                    <div class="aui-btn-group">
-                                                      <a href="" class="mui-btn"><i class="fa fa-inbox"></i><span class="desc">离线缓存</span></a>
-                                                      <a href="" class="mui-btn"><i class="fa fa-play-circle"></i><span class="desc">在线播放</span></a>
-                                                    </div>
-                                                </li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/acfun.png" class="aui-icon"/><span class="desc">ACFUN</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/bili.png" class="aui-icon"/><span class="desc">Bilibili</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/><span class="desc">百度云</span></li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/><span class="desc">百度云</span></li>
-                                            </ul>
-                                        </li>
-                                        <li class="mui-col-xs-4">
-                                            <div class="desc">第14集</div>
-                                            <ul class="aui-downtype mui-grid-view ">
-                                                <li class="mui-col-xs-12 aui-main-btn">
-                                                    <div class="aui-btn-group">
-                                                      <a href="" class="mui-btn"><i class="fa fa-inbox"></i><span class="desc">离线缓存</span></a>
-                                                      <a href="" class="mui-btn"><i class="fa fa-play-circle"></i><span class="desc">在线播放</span></a>
-                                                    </div>
-                                                </li>
-                                                <li class="mui-col-xs-4 mui-col-sm-3"><img src="../lib/style/images/icons/baidu.png" class="aui-icon"/><span class="desc">百度云</span></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </li>
-                            <li class="mui-table-view-cell mui-collapse">
-                                <a class="mui-navigate-right" href="#">第三季 Season 3</a>
-                                <div class="mui-collapse-content">
-                                    <ul class="aui-downlist">
-                                        <li>行尸走肉.The.Walking.Dead.S07E01.中英字幕.WEB-HR.AAC.1024X576.x264.mp4<span class="data">1天前</span></li>
-                                    </ul>
-                                </div>
-                            </li>
-                        </ul>
-
-				</div>
-				<div id="item3mobile" class="mui-control-content">
-					<div id="scroll3" class="mui-scroll-wrapper">
-						<div class="mui-scroll">
-							33333333
-						</div>
-					</div>
-
-				</div>
-				<div id="item4mobile" class="mui-control-content">
-				    1231231
-				</div>
-
-	</div>
-	
-	<!--右上角弹出菜单-->
-    <div id="topPopover" class="mui-popover">
-        <div class="mui-popover-arrow"></div>
-        <div class="mui-scroll-wrapper">
-            <div class="mui-scroll">
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell">
-                        显示完整名称
-                        <div id="aui-showFullName" class="mui-switch mui-switch-blue mui-switch-mini mui-active">
-                            <div class="mui-switch-handle"></div>
+                            </div>    
                         </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        显示日期
-                        <div id="aui-showData" class="mui-switch mui-switch-blue mui-switch-mini ">
-                            <div class="mui-switch-handle"></div>
+                    </div><!--tv end-->
+                    
+                    <div class="panel panel-today-movie">
+                        <div class="panel-header"><span class="title">今日推荐-电影</span></div>
+                        <div class="panel-body">
+                            <div class="mui-scroll-wrapper play-list-wrap">
+                                <div class="mui-scroll">
+                                    <ul class="play-list">
+                                        <li>
+                                            <span class="count">1</span>
+                                            <img src="../lib/style/images/movies/movie1.jpg" alt="" />
+                                            <p class="desc">行尸走肉</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">2</span>
+                                            <img src="../lib/style/images/movies/movie2.jpg" alt="" />
+                                            <p class="desc">浮生若寄</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">3</span>
+                                            <img src="../lib/style/images/movies/movie3.jpg" alt="" />
+                                            <p class="desc">谍网</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">4</span>
+                                            <img src="../lib/style/images/movies/movie4.jpg" alt="" />
+                                            <p class="desc">全境通告</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">5</span>
+                                            <img src="../lib/style/images/movies/movie5.jpg" alt="" />
+                                            <p class="desc">世界上最后一个男人</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">6</span>
+                                            <img src="../lib/style/images/movies/movie6.jpg" alt="" />
+                                            <p class="desc">衰姐们</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">7</span>
+                                            <img src="../lib/style/images/movies/movie7.jpg" alt="" />
+                                            <p class="desc">开心汉堡店</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">8</span>
+                                            <img src="../lib/style/images/movies/movie8.jpg" alt="" />
+                                            <p class="desc">谍网</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">9</span>
+                                            <img src="../lib/style/images/movies/movie9.jpg" alt="" />
+                                            <p class="desc">浮生若寄</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">10</span>
+                                            <img src="../lib/style/images/movies/movie10.jpg" alt="" />
+                                            <p class="desc">谍网</p>
+                                        </li>
+                                        <li>
+                                            <span class="count">11</span>
+                                            <img src="../lib/style/images/movies/movie11.jpg" alt="" />
+                                            <p class="desc">谍网</p>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </div>    
                         </div>
-                    </li>
-                    <li class="mui-table-view-cell">
-                        直接显示下载方式
-                        <div id="aui-showLinks" class="mui-switch mui-switch-blue mui-switch-mini ">
-                            <div class="mui-switch-handle"></div>
-                        </div>
-                    </li>
-                    <li class="mui-table-view-cell" onclick="alert('done')">分享本页面</li>
-                </ul>
-            </div>
+                    </div><!-- movie end -->
+                </div>
+            </div><!-- mui-content end -->
+            <!-- off-canvas backdrop -->
+            <div class="mui-off-canvas-backdrop"></div>
         </div>
     </div>
     
-    <div id="bottomPopover" class="mui-popover mui-popover-bottom">
-        <div class="mui-popover-arrow"></div>
-        <div class="mui-scroll-wrapper">
-            <div class="mui-scroll">
-                <ul class="mui-table-view">
-                    <li class="mui-table-view-cell"><a href="#"><i class="iconfont">&#xe905;</i>分享到微博</a>
-                    </li>
-                    <li class="mui-table-view-cell"><a href="#"><i class="iconfont">&#xe906;</i>分享到微信好友</a>
-                    </li>
-                    <li class="mui-table-view-cell"><a href="#"><i class="iconfont">&#xe904;</i>分享到微信朋友圈</a>
-                    </li>
-                    <li class="mui-table-view-cell"><a href="#"><i class="fa fa-qq"></i>分享到QQ好友</a>
-                </ul>
-            </div>
-        </div>
-    </div>
-    <div class="fullmask"></div>
-    <div class="share">
-        <a href="#bottomPopover"><i class="fa fa-share-alt"></i></a>
-        </div>
-	<script src="../lib/init/loadFiles.js"></script>
 </body>
 </html>
+<script src="../lib/init/loadFiles-after.js"></script>
 <script>
-mui.toast('本页面于18小时23分钟后过期',{ duration:4000, type:'div' });
-mui('.aui-tabs-wrap').scroll({
+    mui('body').on('tap','a',function(){document.location.href=this.href;});
+    mui('.play-list-wrap').scroll({
      scrollY: false, //是否竖向滚动
      scrollX: true, //是否横向滚动
      indicators: false, //是否显示滚动条
      deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
      bounce: true //是否启用回弹
-});
-   $(".aui-downlist li,.aui-watchlist li").click(function(){
-      if($("body").hasClass("aui-links-visable")==false){
-	      $(".fullmask").show();
-	      $(this).addClass("aui-downtype-now");
-	      $(this).find(".aui-downtype").appendTo("body"); 
-      } 
-   });
-   $(".fullmask").click(function(){
-       $(".aui-downlist li .aui-downtype").attr("style","");
-       $(this).hide();
-       $("body>.aui-downtype").appendTo(".aui-downtype-now");
-       $(".aui-downtype-now").removeClass("aui-downtype-now");
-   });
-   $("#aui-showFullName").click(function(){
-       if($(this).hasClass("mui-active")){
-           $(".aui-downlist").removeClass("aui-downlist-short");
-       }else{
-           $(".aui-downlist").addClass("aui-downlist-short");
-       }
-   });
-   $("#aui-showData").click(function(){
-       if($(this).hasClass("mui-active")){
-           $(".aui-downlist").addClass("aui-downlist-hasData");
-       }else{
-           $(".aui-downlist").removeClass("aui-downlist-hasData");
-       }
-   });
-   $("#aui-showLinks").click(function(){
-       if($(this).hasClass("mui-active")){
-           $("body").addClass("aui-links-visable");
-           $(".aui-downlist,.aui-watchlist").addClass("aui-downlist-showLinks");
-       }else{
-           $("body").removeClass("aui-links-visable");
-           $(".aui-downlist,.aui-watchlist").removeClass("aui-downlist-showLinks");
-       }
-   });
+    });
+    mui('.main-scroll').scroll({
+     scrollY: true, //是否竖向滚动
+     scrollX: false, //是否横向滚动
+     indicators: false, //是否显示滚动条
+     deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+     bounce: true //是否启用回弹
+    });
 </script>
+
