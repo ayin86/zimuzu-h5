@@ -5,10 +5,10 @@
 
 @font-face {
   font-family: 'FontAwesome';
-  src: url('../../icons/font-awesome/fontawesome-webfont.eot?v=3.0.1');
-  src: url('../../icons/font-awesome/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
-    url('../../icons/font-awesome/fontawesome-webfont.woff?v=3.0.1') format('woff'),
-    url('../../icons/font-awesome/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
+  src: url('../../icons/font-awesome/fonts/fontawesome-webfont.eot?v=3.0.1');
+  src: url('../../icons/font-awesome/fonts/fontawesome-webfont.eot?#iefix&v=3.0.1') format('embedded-opentype'),
+    url('../../icons/font-awesome/fonts/fontawesome-webfont.woff?v=3.0.1') format('woff'),
+    url('../../icons/font-awesome/fonts/fontawesome-webfont.ttf?v=3.0.1') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
