@@ -166,7 +166,7 @@ a{text-decoration: none!important;}
 }
 //overflow-y: hidden;overflow-x: auto;
 .mui-content{height: 100%;}
-.mui-bar{background-color: @white;}
+.mui-bar{background-color: @white; border-bottom: 1px solid #eee;}
 .aui-tabs-wrap{ position: fixed;top:44px;right:0;left:0; height:50px;  z-index:10; background-color: #eee;
   .mui-scroll{ width:auto;}
 }
@@ -287,53 +287,66 @@ a{text-decoration: none!important;}
   }
   .panel-body{}
   &.panel-infomation{
-    .panel-body{padding:10px;
+    .panel-body{ padding:10px 0 0 0;
       .mui-table-view{ border: 1px solid #c8c7cc; border-top: none; border-bottom: none;}
     }
   }
 }
 
+.mui-card{ margin:0 0 10px 0; box-shadow:none; .bdr(0);
+  .mui-card-header{&:after{display:none;}
+    p{margin:0;
+      &.title{font-style: 1.6rem; color:@black;  .thidden;}
+      .type-tv,.type-mov,.type-news{font-size: 1.4rem;color:@white; padding:0 .5rem; margin:0 .5rem 0 0; border-radius:20px;}
+      .type-news{background-color: @blue; }.type-tv{background-color: @orange; }.type-mov{background-color: @purple-l;}
+    }
+  }
+  .mui-card-content-inner{padding:0 15px;
+    img{display:block;}
+    .play-list{margin:0 -15px;}
+  }
+  .mui-card-footer{&:before{display:none;} display:block;
+    p{margin:0;
+      &.info{float: left;}
+    }
+    .mui-card-link{display:block; float: right; padding:0 0 0 20px;}
+  }
+}
+/**
+ *  
+ */
+.play-list{white-space: normal;  padding:.8rem .5rem 0 .5rem; font-size: 0; 
+  >li{display:inline-block; white-space: nowrap; position: relative;  width: 25%;padding:0 .5rem; overflow: hidden;
+    .img-item{ line-height:0;overflow: hidden; position: relative; .bdr; padding:0; margin: 0 auto; text-align: center; 
+      img{ .bdr; border: 1px solid #ccc; width: 100%; max-width:100%; height:auto;}
+      .count,.type{position: absolute; right:-18px; top:-4px; width: 50px; color:fade(@white,90%);line-height: 1rem;padding: 8px 0 3px 0; background-color: fade(@black,60%); text-align: center; transform:rotate(45deg);font-family: arial;font-size: 12px;}
+      .type{ right:auto; top:auto; width: 70px; left:-24px;  bottom:-4px; padding:3px 0 14px 0;}
+      .desc{position: absolute; .fullbox; background-color: fade(@black,50%);  padding:2rem 0 0 0;
+        p{line-height: 2rem; margin:0; color:@white;}
+      }
+    }
+    >.desc{font-size: 14px; line-height: 1.8rem; text-align: center; color:@black;width: 100%;  margin: 0;.thidden; }
+  //&:first-child{.count{background-color: fade(@red,70%); color:@white;}}
+  }
+  &.play-list-col3{li{width:33.33333333333%;>.desc{}}}
+}
+
 .play-list-wrap{height:140px; position: static;
   .mui-scroll{width:auto;
-    .play-list{white-space: nowrap;padding:.5rem; font-size: 0; 
-      >li{display:inline-block; white-space: nowrap; position: relative;
-        .img-item{ line-height:0;overflow: hidden; position: relative; margin:0 5px 25px 5px;.bdr; padding:0;
-          img{ height:100px;max-width: 70px;.bdr; border: 1px solid #ccc; }
-          .count,.type{position: absolute; right:-18px; top:-4px; width: 50px; color:fade(@white,90%);line-height: 1rem;padding: 8px 0 3px 0; background-color: fade(@black,60%); text-align: center; transform:rotate(45deg);font-family: arial;font-size: 12px;}
-          .type{ right:auto; top:auto; width: 70px; left:-24px;  bottom:-4px; padding:3px 0 14px 0;}
+    .play-list{white-space: nowrap; 
+      >li{width: auto;padding:0; max-width: 80px;
+        .img-item{  margin:0 5px;
+          img{ height:100px;max-width: 70px; width:auto;}
         }
-        .desc{font-size: 14px; line-height: 1; text-align: center; color:@black;  margin: 0;.thidden; position: absolute; left:0; right:0;bottom:5px; }
       //&:first-child{.count{background-color: fade(@red,70%); color:@white;}}
       }
     }
   }
-  &.play-list-showall{height:auto; position: static;
-    .mui-scroll{width:100%;position: static;
-      .play-list{white-space: normal; 
-        >li{ width: 25%;padding:0 .5rem;
-          .img-item{ margin: 0 auto 25px auto; text-align: right; 
-            img{width: 100%; max-width:100%; height:auto;} 
-            .count{}
-          }
-          .desc{}
-        }
-      }
-    }
-  }
 }
-/*
- <ul class="media-list">
-      <li>
-          <img src="../lib/style/images/banner/banner1.jpg">
-          <div class="media-list-body">
-              <p class="title">《入场券》：假如给我三天光明，我会用来抛妻弃子，出</p>
-              <p>泽生 发表于 2017-04-12 16:20 (1小时前)</p>
-          </div>
-      </li>
-  </ul>
- * */
-.media-list{
-  li{position: relative; border-bottom: 1px solid @gray-lrr;  padding:1rem 0;
+
+
+.pic-list{
+  li{position: relative; border-bottom: 1px solid @gray-lrr;  padding:1rem; background-color: #fff;
     &:first-child{ border-top: 1px solid @gray-lrr;  }
     img{float: left; width: 25%;}
     .media-list-body{padding:0 0 0 27%;
@@ -343,7 +356,23 @@ a{text-decoration: none!important;}
         .type-news{background-color: @blue; }.type-tv{background-color: @orange; }.type-mov{background-color: @purple-l;}
       }
     }
+    .fav{position: absolute; top:50%; background-color: @gray-lrr; color:fade(@white,50%);.bdr(50%); padding:9px 0 0 0; right:2rem; margin-top:-25px; height:50px; width:50px;.fa; text-align: center; font-size: 3rem; 
+      &:after{content: "\f006";}
+      &.active{background-color: @blue-l; color:@white; &:after{content: "\f005";}}
+      &.fav-small{height:20px;width:50px; .bdr; font-size: 2rem; padding:0; margin: 0; bottom:1.3rem; top:auto; right:1rem;}
+     }
   }
+  &.pic-list-h{li{
+    img{width: 60px;}
+    .media-list-body{padding:0 70px 0 60px; 
+      p{line-height: 2rem;
+        &.title{text-indent: 1rem; font-size: 2rem;}
+        &.title-en{text-indent: 1rem; color:@gray-l;}
+      }
+     }
+     &:after{.fixfloat;}
+  }}
+  
 }
 
 .aui-slider{
@@ -356,5 +385,14 @@ a{text-decoration: none!important;}
     }
   }
   .mui-slider-indicator{bottom:30px; background-color:fade(@black,50%);}
+}
+
+.mui-title{height:44px;}
+.header-tab{width: 60%!important; min-width:180px ;
+  .mui-control-item{line-height: 28px;}
+}
+.markTV{ background-color: @gray-lr; padding:.2rem; line-height: 1rem; .bdr;
+  .TVS{ color:@white;}
+  .TVA{background-color: @white;  padding:0 .2rem; color:@gray; .bdr;}
 }
 
