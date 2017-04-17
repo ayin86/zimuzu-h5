@@ -315,17 +315,18 @@ a{text-decoration: none!important;}
 /**
  *  
  */
-.play-list{white-space: normal;  padding:.8rem .5rem 0 .5rem; font-size: 0; 
-  >li{display:inline-block; white-space: nowrap; position: relative;  width: 25%;padding:0 .5rem; overflow: hidden;
+.play-list{white-space: normal;  padding:1rem .5rem 0 .5rem; font-size: 0; 
+  >li{display:inline-block; white-space: nowrap; position: relative;  width: 25%;padding:0 .8rem; overflow: hidden;
     .img-item{ line-height:0;overflow: hidden; position: relative; .bdr; padding:0; margin: 0 auto; text-align: center; 
       img{ .bdr; border: 1px solid #ccc; width: 100%; max-width:100%; height:auto;}
       .count,.type{position: absolute; right:-18px; top:-4px; width: 50px; color:fade(@white,90%);line-height: 1rem;padding: 8px 0 3px 0; background-color: fade(@black,60%); text-align: center; transform:rotate(45deg);font-family: arial;font-size: 12px;}
       .type{ right:auto; top:auto; width: 70px; left:-24px;  bottom:-4px; padding:3px 0 14px 0;}
-      .desc{position: absolute; .fullbox; background-color: fade(@black,50%);  padding:2rem 0 0 0;
+      .desc{position: absolute; .fullbox; background-color: fade(@black,50%);  padding:30px 0 0 0;
         p{line-height: 2rem; margin:0; color:@white;}
       }
     }
-    >.desc{font-size: 14px; line-height: 1.8rem; text-align: center; color:@black;width: 100%;  margin: 0;.thidden; }
+    >.desc{font-size: 14px; line-height: 1.8rem; text-align: center; color:@black;width: 100%;  margin: 0;.thidden; &.desc-en{color:@gray;}}
+    
   //&:first-child{.count{background-color: fade(@red,70%); color:@white;}}
   }
   &.play-list-col3{li{width:33.33333333333%;>.desc{}}}
@@ -348,15 +349,15 @@ a{text-decoration: none!important;}
 .pic-list{
   li{position: relative; border-bottom: 1px solid @gray-lrr;  padding:1rem; background-color: #fff;
     &:first-child{ border-top: 1px solid @gray-lrr;  }
-    img{float: left; width: 25%;}
-    .media-list-body{padding:0 0 0 27%;
-      p{line-height: 1.4rem;.thidden; margin-bottom:.5rem; text-indent: 1rem;
+    img{float: left; width: 28%;}
+    .media-list-body{padding:0 0 0 28%;
+      p{.thidden; margin-bottom:.5rem; text-indent: 1rem;
         &.title{ font-size: 1.6rem; line-height: 2rem; color:@black; .thidden; text-indent: 0;}
         .type-tv,.type-mov,.type-news{font-size: 1.4rem;color:@white; padding:0 .5rem; margin:0 1rem 0 0; border-radius:20px;}
         .type-news{background-color: @blue; }.type-tv{background-color: @orange; }.type-mov{background-color: @purple-l;}
       }
     }
-    .fav{position: absolute; top:50%; background-color: @gray-lrr; color:fade(@white,50%);.bdr(50%); padding:9px 0 0 0; right:2rem; margin-top:-25px; height:50px; width:50px;.fa; text-align: center; font-size: 3rem; 
+    .fav{position: absolute; top:50%; background-color: @gray-lrr; color:fade(@white,50%);.bdr(50%); padding:7px 0 0 0; right:2rem; margin-top:-20px; height:40px; width:40px;.fa; text-align: center; font-size: 2.5rem; 
       &:after{content: "\f006";}
       &.active{background-color: @blue-l; color:@white; &:after{content: "\f005";}}
       &.fav-small{height:20px;width:50px; .bdr; font-size: 2rem; padding:0; margin: 0; bottom:1.3rem; top:auto; right:1rem;}

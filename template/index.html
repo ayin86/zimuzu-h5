@@ -25,7 +25,7 @@
                             <a class="mui-navigate-right" id="navHome"><i class="fa fa-home"></i>首页</a>
                         </li>
                         <li class="mui-table-view-cell">
-                            <a class="mui-navigate-right" id="navFilm"><i class="fa fa-film"></i>影视</a>
+                            <a class="mui-navigate-right" id="navFilm"><i class="fa fa-film"></i>最新</a>
                         </li>
                         <li class="mui-table-view-cell">
                             <a class="mui-navigate-right" id="navDisc"><i class="fa fa-compass"></i>发现</a>
@@ -115,7 +115,7 @@ function navHome(){
 
 
 function navFilm(){
-    var name="影视";
+    var name="最新";
     cleanMuiCont(name);
     $.ajax({
         url: "index-film.html", 
