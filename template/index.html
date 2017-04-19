@@ -15,7 +15,14 @@
         <aside id="offCanvasSide" class="mui-off-canvas-left side-menu-wrap">
             <div id="offCanvasSideScroll" class="mui-scroll-wrapper">
                 <div class="mui-scroll">
-                    <ul class="block-group side-btn">
+                    <div class="user-info">
+                        <div class="user-head">
+                            <img src="../lib/style/images/head/hepburn.png" alt="" />
+                        </div>
+                        <p class="user-id">Audrey Hepburn</p>
+                        <span class="user-level">至尊会员</span>
+                    </div>
+                    <ul class="block-group side-btn" style="display:none;">
                         <li><a class="mui-btn mui-btn-primary" href="login.html">登录</a></li>
                         <li><a class="mui-btn mui-btn-primary" href="register.html">注册</a></li>
                     </ul>
@@ -66,6 +73,8 @@ document.querySelector('#navHome').addEventListener('tap',function(){navHome();}
 document.querySelector('#navFilm').addEventListener('tap',function(){navFilm();});
 document.querySelector('#navDisc').addEventListener('tap',function(){navDisc();});
 document.querySelector('#navFav').addEventListener('tap',function(){navFav();});
+document.querySelector('#navPers').addEventListener('tap',function(){navPers();});
+document.querySelector('#navAbout').addEventListener('tap',function(){navAbout();});
 function cleanMuiCont(name){
     $(".mui-title").html(name);
     $(".mui-content").remove();
@@ -189,7 +198,6 @@ function navFav(){
             var Obj = $("<code></code>").append($(data));//包装数据  
             var html = $(".mui-content", Obj);
             $(".mui-inner-wrap").append(html);
-            //$(".mui-segmented-control").append(".mui-title");
             var tab=$(html).find(".mui-segmented-control");
             $(".mui-title").empty().append(tab);
             
@@ -211,6 +219,50 @@ function navFav(){
         }
     });
 }
-navFav();
+
+function navPers(){
+    var name="我的";
+    cleanMuiCont(name);
+    $.ajax({
+        url: "index-pers.html", 
+        type: "GET", 
+        dataType:"html",
+        success: function(data){
+            var Obj = $("<code></code>").append($(data));//包装数据  
+            var html = $(".mui-content", Obj);
+            $(".mui-inner-wrap").append(html);
+            mui('.main-scroll').scroll({
+             scrollY: true, //是否竖向滚动
+             scrollX: false, //是否横向滚动
+             indicators: false, //是否显示滚动条
+             deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+             bounce: true //是否启用回弹
+            });
+        }
+    });
+}
+
+function navAbout(){
+    var name="关于";
+    cleanMuiCont(name);
+    $.ajax({
+        url: "index-about.html", 
+        type: "GET", 
+        dataType:"html",
+        success: function(data){
+            var Obj = $("<code></code>").append($(data));//包装数据  
+            var html = $(".mui-content", Obj);
+            $(".mui-inner-wrap").append(html);
+            mui('.main-scroll').scroll({
+             scrollY: true, //是否竖向滚动
+             scrollX: false, //是否横向滚动
+             indicators: false, //是否显示滚动条
+             deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+             bounce: true //是否启用回弹
+            });
+        }
+    });
+}
+navAbout();
 </script>
 
