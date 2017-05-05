@@ -1,93 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
+<title>demo</title>
 <meta charset='utf-8' />
-<script src="../lib/init/loadFiles.js"></script>
-<script>
-
-    $(document).ready(function() {
-
-        $('#calendar').fullCalendar({
-            defaultDate: '2016-01-12',
-            editable: true,
-            eventLimit: true, // allow "more" link when too many events
-            events: [
-                {
-                    title: 'All Day Event',
-                    start: '2016-01-01'
-                },
-                {
-                    title: 'Long Event',
-                    start: '2016-01-07',
-                    end: '2016-01-10'
-                },
-                {
-                    id: 999,
-                    title: 'Repeating Event',
-                    start: '2016-01-09T16:00:00'
-                },
-                {
-                    id: 999,
-                    title: 'Repeating Event',
-                    start: '2016-01-16T16:00:00'
-                },
-                {
-                    title: 'Conference',
-                    start: '2016-01-11',
-                    end: '2016-01-13'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2016-01-12T10:30:00',
-                    end: '2016-01-12T12:30:00'
-                },
-                {
-                    title: 'Lunch',
-                    start: '2016-01-12T12:00:00'
-                },
-                {
-                    title: 'Meeting',
-                    start: '2016-01-12T14:30:00'
-                },
-                {
-                    title: 'Happy Hour',
-                    start: '2016-01-12T17:30:00'
-                },
-                {
-                    title: 'Dinner',
-                    start: '2016-01-12T20:00:00'
-                },
-                {
-                    title: 'Birthday Party',
-                    start: '2016-01-13T07:00:00'
-                },
-                {
-                    title: 'Click for Google',
-                    url: 'http://google.com/',
-                    start: '2016-01-28'
-                }
-            ]
-        });
-        
-    });
-
-</script>
-<style>
-
-    body {
-        margin: 40px 10px;
-        padding: 0;
-        font-family: "Lucida Grande",Helvetica,Arial,Verdana,sans-serif;
-        font-size: 14px;
-    }
-
-    
-
+<style type="text/css" media="screen">
+	.links{}
+	.links li{list-style: none;padding:10px;}
+	.links li a{color:blue; font-size:30px; font-weight:bold;}
+	.links li p{color:#666;font-size:24px;  margin:0; padding:0;}
 </style>
 </head>
 <body>
-
-    <div id='calendar'></div>
+   <ul class="links">
+       <li>
+           <a href="home.html">首页</a>
+           <p>首页包含了众多页面，首页、最新（筛选功能）、发现、收藏、我的、关于、搜索</p>
+           <p>这些页面用ajax的方式进行切换</p>
+       </li>
+       <li>
+           <a href="detail.html">影视详情</a>
+           <p>展示影片的具体信息的页面</p>
+       </li>
+       <li>
+           <a href="download.html">影视详情下载</a>
+           <p>用于展示影片下载地址的页面</p>
+       </li>
+       <li>
+           <a href="article.html">文章资讯</a>
+           <p>用于展示新闻资讯、文章等内容的页面</p>
+       </li>
+       <li>
+           <a href="login.html">登录</a>
+       </li>
+       <li>
+           <a href="register.html">注册</a>
+       </li>
+       <li>
+           <a href="forgetpass.html">忘记密码</a>
+       </li>
+   </ul>
 
 </body>
 </html>

@@ -41,6 +41,9 @@
                             <a class="mui-navigate-right" id="navFav"><i class="fa fa-star"></i>收藏</a>
                         </li>
                         <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right" id="navChat"><i class="fa fa-comments-o"></i>聊天</a>
+                        </li>
+                        <li class="mui-table-view-cell">
                             <a class="mui-navigate-right" id="navPers"><i class="fa fa-user"></i>我的</a>
                         </li>
                         <li class="mui-table-view-cell">
@@ -51,11 +54,125 @@
             </div>
             <div class="side-fotter-info">人人影视旗下产品</div>
         </aside>
+        
+        
+        <aside id="offCanvasSide2" class="mui-off-canvas-right" style="width:100%;">
+            <div class="ui-search">
+                <div class="input-bar">
+                    <input type="text" class="search-control" value="" placeholder="请输入关键字" id="some_name"/>
+                    <button class="search-control" id="offCanvasHide">取消</button>
+                </div>
+                <div class="mui-segmented-control mui-segmented-control-inverted">
+                    <a class="mui-control-item mui-active" href="#search-box-1">影视</a>
+                    <a class="mui-control-item" href="#search-box-2">资讯</a>
+                    <a class="mui-control-item" href="#search-box-3">默认</a>
+                </div>
+                <div id="search-box-1" class="mui-control-content mui-scroll-wrapper mui-active">
+                    <div class="mui-scroll">
+                    <ul class="play-list  play-list-col3">
+                        <li>
+                            <div class="img-item">
+                                <span class="count">8.2</span>
+                                <span class="type">电影</span>
+                                <img src="../lib/style/images/movies/movie2.jpg" alt="">
+                            </div>
+                            <p class="desc">黑夜传说3</p>
+                            <p class="desc desc-en">Underworld: Rise of the Lycans</p>
+                        </li>
+                        <li>
+                            <div class="img-item">
+                                <span class="count">8.9</span>
+                                <span class="type">电影</span>
+                                <img src="../lib/style/images/movies/movie3.jpg" alt="">
+                            </div>
+                            <p class="desc">刺客信条</p>
+                            <p class="desc desc-en">Assassin's Creed</p>
+                        </li>
+                        <li>
+                            <div class="img-item">
+                                <span class="count">7.3</span>
+                                <img src="../lib/style/images/tvplay/tvplay4.jpg" alt="">
+                            </div>
+                            <p class="desc">全境通告</p>
+                            <p class="desc desc-en">A.P.B.</p>
+                        </li>
+                        <li>
+                            <div class="img-item">
+                                <span class="count">8.5</span>
+                                <span class="type">美剧</span>
+                                <img src="../lib/style/images/tvplay/tvplay1.jpg" alt="">
+                            </div>
+                            <p class="desc">行尸走肉</p>
+                            <p class="desc desc-en">Walking Dead</p>
+                        </li>
+                        <li>
+                            <div class="img-item">
+                                <span class="count">6.7</span>
+                                <span class="type">美剧</span>
+                                <img src="../lib/style/images/tvplay/tvplay2.jpg" alt="">
+                            </div>
+                            <p class="desc">浮生若寄</p>
+                            <p class="desc desc-en">Crashing</p>
+                        </li>
+                        <li>
+                            <div class="img-item">
+                                <span class="count">5.4</span>
+                                <span class="type">美剧</span>
+                                <img src="../lib/style/images/tvplay/tvplay3.jpg" alt="">
+                            </div>
+                            <p class="desc">谍网</p>
+                            <p class="desc desc-en">Quantico</p>
+                        </li>
+                        <li>
+                            <div class="img-item">
+                                <span class="count">7.5</span>
+                                <img src="../lib/style/images/tvplay/tvplay5.jpg" alt="">
+                            </div>
+                            <p class="desc">最后一个男人</p>
+                            <p class="desc desc-en">The Last Man on Earth</p>
+                        </li>
+                        
+                    </ul>
+                    </div>
+                </div>
+                <div id="search-box-2" class="mui-control-content mui-scroll-wrapper">
+                    <div class="mui-scroll">
+                    <ul class="pic-list">
+                        <li>
+                            <img src="../lib/style/images/banner/banner1.jpg">
+                            <div class="media-list-body">
+                                <p class="title">《超感猎杀》第二季海报及预告解析</p>
+                                <p><span class="type-news">新闻</span>泽生 1月前</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../lib/style/images/banner/banner2.jpg">
+                            <div class="media-list-body">
+                                <p class="title">《四重奏》| 人与人的关系像是一道复杂的几何题</p>
+                                <p><span class="type-tv">剧评</span>溺水的大象 1天前</p>
+                            </div>
+                        </li>
+                        <li>
+                            <img src="../lib/style/images/banner/banner3.jpg">
+                            <div class="media-list-body">
+                                <p class="title">《入场券》：假如给我三天光明，我会用来抛妻弃子，出</p>
+                                <p><span class="type-mov">影评</span>泽生 1小时前</p>
+                            </div>
+                        </li>
+                    </ul>
+                    </div>
+                </div>
+                <div id="search-box-3" class="mui-control-content">
+                    <div class="feed-back">抱歉，没有搜索到相关资讯！！</div>
+                </div>
+            </div>
+        </aside>
         <!--主界面部分-->
         <div class="mui-inner-wrap">
             <header class="mui-bar mui-bar-nav">
                 <a href="#offCanvasSide" class="mui-icon mui-action-menu mui-icon-bars mui-pull-left"></a>
-                <a class=" mui-icon mui-action-menu  mui-icon-search  mui-pull-right"></a>
+                <a href="" class="mui-pull-left icon-desc">菜单</a>
+                <a href="#offCanvasSide2" class=" mui-icon mui-action-menu  mui-icon-search  mui-pull-right"></a>
                 <h1 class="mui-title">首页</h1>
             </header>
             
@@ -68,6 +185,7 @@
 <script src="../lib/init/loadFiles-after.js"></script>
 <script>
 //navHome navFilm navDisc navFav navPers navAbout
+var offCanvasWrapper = mui('#offCanvasWrapper');
 document.querySelector('#offCanvasSide').addEventListener('tap',function(){mui('#offCanvasWrapper').offCanvas('close');});
 document.querySelector('#navHome').addEventListener('tap',function(){navHome();});
 document.querySelector('#navFilm').addEventListener('tap',function(){navFilm();});
@@ -75,6 +193,14 @@ document.querySelector('#navDisc').addEventListener('tap',function(){navDisc();}
 document.querySelector('#navFav').addEventListener('tap',function(){navFav();});
 document.querySelector('#navPers').addEventListener('tap',function(){navPers();});
 document.querySelector('#navAbout').addEventListener('tap',function(){navAbout();});
+document.getElementById('offCanvasHide').addEventListener('tap', function() { offCanvasWrapper.offCanvas('close');});
+mui('.mui-scroll-wrapper').scroll({
+ scrollY: true, //是否竖向滚动
+ scrollX: false, //是否横向滚动
+ indicators: false, //是否显示滚动条
+ deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+ bounce: true //是否启用回弹
+});
 function cleanMuiCont(name){
     $(".mui-title").html(name);
     $(".mui-content").remove();
@@ -103,7 +229,6 @@ function navHome(){
             });
             
             mui("#slider").slider({interval: 2000},cloneslideimg());//slider加载时候之下cloneslideimg事件，完成图片补充
-            
             mui('.play-list-wrap').scroll({
              scrollY: false, //是否竖向滚动
              scrollX: true, //是否横向滚动
@@ -134,6 +259,32 @@ function navFilm(){
             var Obj = $("<code></code>").append($(data));//包装数据  
             var html = $(".mui-content", Obj);
             $(".mui-inner-wrap").append(html);
+            document.querySelector('.filter-btn').addEventListener('tap',function(){
+                $(".film-filter").toggleClass("film-filter-expand");
+            });
+            document.querySelector('.btn-close-filter').addEventListener('tap',function(){
+                $(".film-filter").toggleClass("film-filter-expand");
+            });
+            
+            mui(".filter-item").on('tap','.filter-item li',function(){
+                var eobj=this;
+                var $eobj=$(this).parent().children();
+                $($eobj).each(function(i,bro2){
+                    if(bro2==eobj){
+                        $(bro2).addClass("active");
+                    }else{
+                        $(bro2).removeClass("active");
+                    }
+                });
+            })
+            //$(".filter-item li").interaction({type:"radio"});
+            mui('.film-filter .mui-scroll-wrapper').scroll({
+             scrollY: false, //是否竖向滚动
+             scrollX: true, //是否横向滚动
+             indicators: false, //是否显示滚动条
+             deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
+             bounce: true //是否启用回弹
+            });
             
             mui('.main-scroll').scroll({
              scrollY: true, //是否竖向滚动
@@ -263,6 +414,6 @@ function navAbout(){
         }
     });
 }
-navAbout();
+navHome();
 </script>
 
