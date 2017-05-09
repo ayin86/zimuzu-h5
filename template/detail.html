@@ -21,8 +21,7 @@
     <h1 class="mui-title">影视详情</h1>
     <a class=" mui-icon  mui-icon-upload mui-pull-right"></a>
 </header>
-<div class="mui-content mui-scroll-wrapper main-scroll">
-    <div class="mui-scroll">
+<div class="mui-content ">
     <div class="header-img">
         <img src="../lib/style/images/banner/banner-blank.jpg"/>
         <ul class="film-info">
@@ -73,13 +72,18 @@
         </div>
         <div class="panel-body">
                 <div id="item1mobile" class="mui-control-content mui-active"><!--剧集列表-->
+                    <div class="episode-btn">
+                        <button class="mui-button batch-download"><i class="fa fa-download"></i> <span>批量下载</span></button>
+                        <button class="mui-button batch-confirm"><i class="fa fa-check"></i> <span>确定</span></button>
+                        <button class="mui-button batch-cancel"><i class="fa fa-times"></i> <span>取消</span></button>
+                    </div>
                     <div class="panel panel-white">
                         <div class="panel-header"><span class="title">第十季</span></div>
                         <div class="panel-body">
-                            <ul class="film-list">
-                                <li><span class="mui-badge">1</span></li>
-                                <li><span class="mui-badge">2</span></li>
-                                <li><span class="mui-badge">3</span></li>
+                            <ul class="episode-list">
+                                <li class="viewed"><span class="mui-badge">1</span></li>
+                                <li class="viewed"><span class="mui-badge">2</span></li>
+                                <li class="active"><span class="mui-badge">3</span></li>
                                 <li><span class="mui-badge">4</span></li>
                                 <li><span class="mui-badge">5</span></li>
                                 <li><span class="mui-badge">6</span></li>
@@ -94,7 +98,7 @@
                     <div class="panel panel-white">
                         <div class="panel-header"><span class="title">第九季</span></div>
                         <div class="panel-body">
-                            <ul class="film-list">
+                            <ul class="episode-list">
                                 <li><span class="mui-badge">1</span></li>
                                 <li><span class="mui-badge">2</span></li>
                                 <li><span class="mui-badge">3</span></li>
@@ -112,7 +116,7 @@
                     <div class="panel panel-white">
                         <div class="panel-header"><span class="title">第八季</span></div>
                         <div class="panel-body">
-                            <ul class="film-list">
+                            <ul class="episode-list">
                                 <li><span class="mui-badge">1</span></li>
                                 <li><span class="mui-badge">2</span></li>
                                 <li><span class="mui-badge">3</span></li>
@@ -222,14 +226,34 @@
         </div>
     </div>
 </div>
-</div>
 
 </body>
 
 </html>
 <script src="../lib/init/loadFiles-after.js"></script>
 <script>
+document.querySelector('.batch-download').addEventListener('tap',function(){
+    var el=$(".episode-list");
+    el.addClass("episode-list-download");
+    $('.episode-btn').addClass("episode-btn-active");
+    if(el.hasClass("episode-marked")==false){
+        mui(".episode-list-download").on('tap','li',function(){
+            $(this).toggleClass("active");
+        });
+    }
+    el.addClass("episode-marked");
+});
+document.querySelector('.batch-confirm').addEventListener('tap',function(){
+    alert("confirm batch download !")
+});
+document.querySelector('.batch-cancel').addEventListener('tap',function(){
+    var el=$(".episode-list");
+    el.removeClass("episode-list-download");
+    $('.episode-btn').removeClass("episode-btn-active");
+    
+});
 
+/*
 mui('.main-scroll').scroll({
  scrollY: true, //是否竖向滚动
  scrollX: false, //是否横向滚动
@@ -238,10 +262,11 @@ mui('.main-scroll').scroll({
  bounce: true //是否启用回弹
 });
 mui('.mui-bar-transparent').transparent({
-    top: 0,
-    offset: 20,
-    duration: 50,
-    scrollby:mui('.mui-scroll-wrapper')[0]
-})
+    top: 500,
+    offset: 150,
+    duration: 16,
+    scrollby: document.querySelector('.mui-scroll-wrapper')
+});
+*/
 </script>
 

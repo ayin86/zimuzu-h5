@@ -9,7 +9,7 @@
 <script src="../lib/init/loadFiles.js"></script>
 </head>
 <style>
-.mui-popover{width: 150px; height:140px;}
+.mui-popover{width: 150px; height:140px; }
 </style>
 </head>
 <body>
@@ -223,7 +223,15 @@
     </div>
     </div>
 </div>
-
+<div class="comment-edit-wrap">
+    <div class="comment-edit">
+        <textarea class="comment-text"></textarea>
+        <div class="button-group">
+            <a class="comment-a"><button class="mui-button"><i class="fa fa-check"></i> 发布</button></a>
+            <a class="comment-a comment-cancle"><button class="mui-button "><i class="fa fa-close"></i> 取消</button></a>
+        </div>
+    </div>
+</div>
 <div id="topPopover" class="mui-popover">
     <div class="mui-popover-arrow"></div>
     <div class="mui-scroll-wrapper">
@@ -246,6 +254,12 @@
 </html>
 <script src="../lib/init/loadFiles-after.js"></script>
 <script>
+mui(".film-icon").on('tap','.fa-edit',function(){
+    $(".comment-edit-wrap").addClass("show");
+});
+mui(".button-group").on('tap','.comment-cancle',function(){
+    $(".comment-edit-wrap").removeClass("show");
+});
 mui('.main-scroll').scroll({
  scrollY: true, //是否竖向滚动
  scrollX: false, //是否横向滚动

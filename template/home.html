@@ -179,7 +179,17 @@
             <div class="mui-off-canvas-backdrop"></div><!-- off-canvas backdrop -->
         </div>
     </div>
-    
+    <div class="mobile-tip android-tip">
+        <img src="../lib/style/images/zimuzu-logo.png" alt="" />
+        <p class="desc">Android APP Download Here !</p>
+        <div class="fa fa-times"></div>
+    </div>
+    <div class="mobile-tip iphone-tip">
+        <img src="../lib/style/images/zimuzu-logo.png" alt="" />
+        <p class="desc">点击下方按钮，选择“添加至主屏幕”，即可从桌面访问！</p>
+        <div class="fa fa-times"></div>
+        <div class="arrow"></div>
+    </div>
 </body>
 </html>
 <script src="../lib/init/loadFiles-after.js"></script>
@@ -201,13 +211,19 @@ mui('.mui-scroll-wrapper').scroll({
  deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
  bounce: true //是否启用回弹
 });
-function cleanMuiCont(name){
+function cleanMuiCont(name,search){
     $(".mui-title").html(name);
     $(".mui-content").remove();
+    if(search!=false){
+        $(".mui-icon-search").show();
+    }else{
+        $(".mui-icon-search").hide();
+    }
 }
 function navHome(){
     var name="首页";
-    cleanMuiCont(name);
+    var search=true;
+    cleanMuiCont(name,search);
     $.ajax({
         url: "index-home.html", 
         type: "GET", 
@@ -250,7 +266,8 @@ function navHome(){
 
 function navFilm(){
     var name="最新";
-    cleanMuiCont(name);
+    var search=true;
+    cleanMuiCont(name,search);
     $.ajax({
         url: "index-film.html", 
         type: "GET", 
@@ -299,7 +316,8 @@ function navFilm(){
 
 function navDisc(){
     var name="发现";
-    cleanMuiCont(name);
+    var search=true;
+    cleanMuiCont(name,search);
     $.ajax({
         url: "index-disc.html", 
         type: "GET", 
@@ -340,7 +358,8 @@ function navDisc(){
 
 function navFav(){
     var name="收藏";
-    cleanMuiCont(name);
+    var search=true;
+    cleanMuiCont(name,search);
     $.ajax({
         url: "index-fav.html", 
         type: "GET", 
@@ -373,7 +392,8 @@ function navFav(){
 
 function navPers(){
     var name="我的";
-    cleanMuiCont(name);
+    var search=false;
+    cleanMuiCont(name,search);
     $.ajax({
         url: "index-pers.html", 
         type: "GET", 
@@ -395,7 +415,8 @@ function navPers(){
 
 function navAbout(){
     var name="关于";
-    cleanMuiCont(name);
+    var search=false;
+    cleanMuiCont(name,search);
     $.ajax({
         url: "index-about.html", 
         type: "GET", 
@@ -415,5 +436,13 @@ function navAbout(){
     });
 }
 navHome();
+if($("html").hasClass("android")){
+    $(".android-tip").addClass("show");
+}else if($("html").hasClass("iphone")){
+    $(".iphone-tip").addClass("show");
+}
+mui(".mobile-tip").on("tap",".fa-times",function(){
+    $(this).parent().removeClass("show");
+});
 </script>
 

@@ -442,8 +442,8 @@ a{text-decoration: none!important;}
 }
 
 .mui-content{
-  .header-img{position: relative;
-    img{height:120px; width: 100%; display:block;}
+  .header-img{position: relative; 
+    img{height:120px; width: 100%; display:block; }
     .film-info{ position: absolute; right:0; bottom:10px; width: 60%;
       li{display:table-cell; width: 1%; position: relative;
         p{text-align: center; color:@black; margin:0; color:fade(@black,50%);
@@ -458,7 +458,7 @@ a{text-decoration: none!important;}
   }
   
   .film-title{position: relative; background-color:@white;
-    img{width: 35%; position: absolute; left:3%; top:-40%;}
+    img{width: 35%; position: absolute; .bdr(5px); left:3%; top:-40%;}
     .film-detail{margin:0 0 0 42%;
       p{padding-bottom:5px; margin:0;
         &.title{ font-size: 2rem; color:@black; font-weight: bold; padding:10px 0;}
@@ -480,15 +480,24 @@ a{text-decoration: none!important;}
   }
 }
 
-.film-detail-card{ background-color: @white;
+.film-detail-card{ background-color: @white; 
   .panel-header{padding:0; 
     .mui-segmented-control{width: 100%!important;
       .mui-control-item{display:table-cell;}
     }
   }
-  .panel-body{padding:0 0 .5rem 0;
+  .panel-body{padding:0 0 .5rem 0; position: relative;
+    .episode-btn{position: absolute;  right:1rem; top:.8rem; 
+      .mui-button{color:@blue; border: 1px solid @blue; float: left; margin-left:1rem;}
+      .batch-confirm,.batch-cancel{display:none;}
+      &.episode-btn-active{
+        .batch-download{display:none;}
+        .batch-confirm,.batch-cancel{display:block;}
+      }
+    }
     
   }
+  
 }
 .panel-white{background-color: @white;
   .panel-header{text-align: left; padding:1rem 0;
@@ -496,9 +505,18 @@ a{text-decoration: none!important;}
   }
   .panel-body{&:after{.fixfloat;}}
 }
-.film-list{font-size: 0; padding-bottom:1rem;
-  li{display:inline-block; font-size: 1.6rem; width: 25%; text-align: center; margin:.8rem 0;
-    .mui-badge{display:block; margin:0 1rem; padding:.5rem 0; background-color: @gray-lrr; color:@gray; font-size: 1.8rem;}
+.episode-list{ font-size: 0; padding-bottom:1rem;
+  li{display:inline-block;.fa; font-size: 1.6rem; width: 25%; text-align: center; margin:.8rem 0;
+    .mui-badge{display:block; margin:0 1rem; padding:.5rem 0; background-color: fade(@blue,70%); color:@white; font-size: 1.8rem;}
+    &.viewed{.mui-badge{background-color: fade(@blue,20%);}}
+  }
+  &.episode-list-download{
+    li{ position: relative; 
+      &:after{content:"\f096"; z-index:10;  font-size: 1.4rem; position: absolute; right:1.5rem; bottom:.7rem; color:@white;}
+      &.active{
+        &:after{content:"\f046";}
+      }
+    }
   }
 }
 .film-intro{padding:2rem;
@@ -565,8 +583,8 @@ a{text-decoration: none!important;}
 
 .download-links{
   li.mui-table-view-cell{
-    a.mui-navigate-right{
-      .mui-badge{background-color: @blue; color:@white;}
+    a.mui-navigate-right{ padding-right:3rem; white-space: normal;
+      .mui-badge{background-color: @blue; color:@white; margin-left:.5rem; display:inline-block;    transform:inherit; position: relative; right:auto; top:auto;}
     }
     div.mui-collapse-content{
       .title{color:@gray;
@@ -633,4 +651,46 @@ a{text-decoration: none!important;}
     }
   }
   >.mui-scroll{padding-top:50px;}
+  >.mui-scroll-wrapper{top:94px;}
+}
+
+
+.comment-edit-wrap{position: fixed; bottom:0; left:0; right:0; top:0; background-color: fade(@black,30%);z-index:11; visibility: hidden; opacity: 0; .ani;
+  .comment-edit{position: fixed; bottom:0; left:0; right:0; height:270px; background-color: #f5f5f5; padding:1rem;
+    .comment-text{height:200px; margin:0;}
+    .button-group{display:table; margin:0 -.5rem ;box-sizing: border-box;
+      .comment-a{display:table-cell; width: 1%;   padding:.5rem;
+        .mui-button{width: 100%; border: 1px solid @blue; color:@blue;}
+      }
+    }
+  }
+  &.show{visibility: visible; opacity: 1;}
+}
+
+/*
+ <div class="mobile-tip android-tip">
+        <img src="../lib/style/images/zimuzu-logo.png" alt="" />
+        <p class="desc">Android APP Download Here !</p>
+        <div class="fa fa-times-circle-o"></div>
+    </div>
+    <div class="mobile-tip iphone-tip">
+        <img src="../lib/style/images/zimuzu-logo.png" alt="" />
+        <p class="desc">点击下方按钮，选择“添加至主屏幕”，即可从桌面访问！</p>
+        <div class="fa fa-times-circle-o"></div>
+    </div>*/
+
+.mobile-tip{ position:fixed; bottom:0; left:0; right:0; height:50px; overflow: hidden; background-color: @gray-drr; z-index:11; .bdr; .bxs; visibility: hidden; opacity: 0; z-index:-1; 
+  img{position: absolute; top:10px; left:10px; height:30px;}
+  p.desc{color:@white; padding:0 40px; line-height: 50px; text-align: center;}
+  .fa{position: absolute; right:1rem; top:.8rem; font-size: 2rem; color:@blue; background-color: @white; width: 30px;height:30px; text-align: center; padding-top:5px; .bdr(50%);}
+  &.iphone-tip{height:80px;
+    img{height:50px; top:15px; left:10px;}
+    p.desc{line-height: 30px; padding:5px 70px 0 70px;}
+    .fa{top:2rem;}
+    .arrow{position: absolute; left:50%; bottom:0; width: 30px; margin-left:-15px; height:15px; overflow: hidden;
+        &:after{position: absolute; left:8px; top:-15px; width: 20px;height: 20px;content: ' ';-webkit-transform: rotate(45deg);transform: rotate(45deg);background: @white;
+        }
+    }
+  }
+  &.show{visibility: visible; z-index:11; opacity: 1;}
 }
