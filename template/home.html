@@ -34,7 +34,10 @@
                             <a class="mui-navigate-right" id="navHome"><i class="fa fa-home"></i>首页</a>
                         </li>
                         <li class="mui-table-view-cell">
-                            <a class="mui-navigate-right" id="navFilm"><i class="fa fa-film"></i>最新</a>
+                            <a class="mui-navigate-right" id="navFilm"><i class="fa fa-film"></i>资源</a>
+                        </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right" id="navFilm"><i class="fa fa-bullseye"></i>今日</a>
                         </li>
                         <li class="mui-table-view-cell">
                             <a class="mui-navigate-right" id="navDisc"><i class="fa fa-compass"></i>发现</a>
@@ -51,6 +54,9 @@
                         <li class="mui-table-view-cell">
                             <a class="mui-navigate-right" id="navAbout"><i class="fa fa-bookmark"></i>关于</a>
                         </li>
+                        <li class="mui-table-view-cell">
+                            <a class="mui-navigate-right" id="navAbout"><i class="fa fa-power-off"></i>退出</a>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -62,6 +68,7 @@
             <div class="ui-search">
                 <div class="input-bar">
                     <input type="text" class="search-control" value="" placeholder="请输入关键字" id="some_name"/>
+                    <button class="search-control search-comfirm">搜索</button>
                     <button class="search-control" id="offCanvasHide">取消</button>
                 </div>
                 <div class="mui-segmented-control mui-segmented-control-inverted">
@@ -71,7 +78,7 @@
                 </div>
                 <div id="search-box-1" class="mui-control-content mui-scroll-wrapper mui-active">
                     <div class="mui-scroll">
-                    <ul class="play-list  play-list-col3">
+                    <ul class="play-list  play-list-col3 fixed-img">
                         <li>
                             <div class="img-item">
                                 <span class="count">8.2</span>
@@ -166,6 +173,16 @@
                 </div>
                 <div id="search-box-3" class="mui-control-content">
                     <div class="feed-back">抱歉，没有搜索到相关资讯！！</div>
+                    
+					<div class="loading-wrapper">
+						<div class="spinner">
+						  <div class="rect1"></div>
+						  <div class="rect2"></div>
+						  <div class="rect3"></div>
+						  <div class="rect4"></div>
+						  <div class="rect5"></div>
+						</div>
+					</div>
                 </div>
             </div>
         </aside>
@@ -177,7 +194,15 @@
                 <a href="#offCanvasSide2" class=" mui-icon mui-action-menu  mui-icon-search  mui-pull-right"></a>
                 <h1 class="mui-title">首页</h1>
             </header>
-            
+            <div class="loading-wrapper loading-wrapper-full" style="display:none;">
+				<div class="spinner">
+				  <div class="rect1"></div>
+				  <div class="rect2"></div>
+				  <div class="rect3"></div>
+				  <div class="rect4"></div>
+				  <div class="rect5"></div>
+				</div>
+			</div>
             <div class="mui-off-canvas-backdrop"></div><!-- off-canvas backdrop -->
         </div>
     </div>
@@ -197,6 +222,38 @@
 <script src="../lib/init/loadFiles-after.js"></script>
 <script>
 //navHome navFilm navDisc navFav navPers navAbout
+/*
+mui.init({
+	pullRefresh: {
+		container: '#pullrefresh',
+		down: {
+			callback: function(){alert(1)}
+		},
+		up: {
+			contentrefresh: '正在加载...',
+			callback: function(){alert(2)}
+		}
+	}
+});*/
+
+function pulldownRefresh() {
+	setTimeout(function() {
+		alert("下拉");
+		mui('#pullrefresh').pullRefresh().endPulldownToRefresh(); //refresh completed
+	}, 1500);
+}
+var count = 0;
+/**
+ * 上拉加载具体业务实现
+ */
+function pullupRefresh() {
+	setTimeout(function() {
+		mui('#pullrefresh').pullRefresh().endPullupToRefresh((++count > 2)); //参数为true代表没有更多数据了。
+		alert("上拉");
+	}, 1500);
+}
+
+
 var offCanvasWrapper = mui('#offCanvasWrapper');
 document.querySelector('#offCanvasSide').addEventListener('tap',function(){mui('#offCanvasWrapper').offCanvas('close');});
 document.querySelector('#navHome').addEventListener('tap',function(){navHome();});
@@ -206,6 +263,9 @@ document.querySelector('#navFav').addEventListener('tap',function(){navFav();});
 document.querySelector('#navPers').addEventListener('tap',function(){navPers();});
 document.querySelector('#navAbout').addEventListener('tap',function(){navAbout();});
 document.getElementById('offCanvasHide').addEventListener('tap', function() { offCanvasWrapper.offCanvas('close');});
+
+document.querySelector('.loading-wrapper-full').addEventListener('tap',function(){$(".loading-wrapper-full").hide();});
+document.querySelector('.mui-title').addEventListener('tap',function(){$(".loading-wrapper-full").show();});
 mui('.mui-scroll-wrapper').scroll({
  scrollY: true, //是否竖向滚动
  scrollX: false, //是否横向滚动
@@ -261,6 +321,21 @@ function navHome(){
              deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
              bounce: true //是否启用回弹
             });
+            
+            //alert($('#pullrefresh').size())
+            mui.init({
+				pullRefresh: {
+					container: '#pullrefresh',
+					down: {
+						callback: pulldownRefresh
+					},
+					up: {
+						contentrefresh: '正在加载...',
+						callback: pullupRefresh
+					}
+				}
+			});
+            
         }
     });
 }
@@ -446,5 +521,7 @@ if($("html").hasClass("android")){
 mui(".mobile-tip").on("tap",".fa-times",function(){
     $(this).parent().removeClass("show");
 });
+
+
 </script>
 

@@ -21,14 +21,14 @@
 </header>
 <div class="mui-content mui-scroll-wrapper main-scroll">
     <div class="mui-scroll">
-    
+            
         <ul class="mui-table-view download-links">
             <li class="mui-table-view-cell mui-collapse">
                 <a class="mui-navigate-right" href="#">[YYETS][Roswell][S03x03][CN][DVDrip].rmvb</a>
                 <div class="mui-collapse-content">
                     <div class="title"><i class="fa fa-clock-o"></i> 15:22<span class="mui-pull-right">1.5GB</span></div>
                     <ul class="links mui-row">
-                        <li class="mui-col-xs-6"><a href="">离线缓存</a></li>
+                        <li class="mui-col-xs-6"><a href="http://baidu.com">离线缓存</a></li>
                         <li class="mui-col-xs-6"><a href="">在线观看</a></li>
                     </ul>
                 </div>
@@ -193,5 +193,7 @@ mui('.main-scroll').scroll({
  deceleration:0.0006, //阻尼系数,系数越小滑动越灵敏
  bounce: true //是否启用回弹
 });
+mui('body').on('tap','a',function(){document.location.href=this.href;});  
+
 </script>
 
