@@ -278,26 +278,6 @@
 </html>
 <script src="../lib/init/loadFiles-after.js"></script>
 <script>
-document.querySelector('.batch-download').addEventListener('tap',function(){
-    var el=$(".episode-list");
-    el.addClass("episode-list-download");
-    $('.episode-btn').addClass("episode-btn-active");
-    if(el.hasClass("episode-marked")==false){
-        mui(".episode-list-download").on('tap','li',function(){
-            $(this).toggleClass("active");
-        });
-    }
-    el.addClass("episode-marked");
-});
-document.querySelector('.batch-confirm').addEventListener('tap',function(){
-    alert("confirm batch download !")
-});
-document.querySelector('.batch-cancel').addEventListener('tap',function(){
-    var el=$(".episode-list");
-    el.removeClass("episode-list-download");
-    $('.episode-btn').removeClass("episode-btn-active");
-    
-});
 
 /*
 mui('.main-scroll').scroll({
