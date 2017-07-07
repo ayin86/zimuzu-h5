@@ -5,7 +5,7 @@ a{text-decoration: none!important;}
 @basered:#ff0000;//基础红色ff0000;
 //12色
 //@red:saturate(@basered,10%);
-@red:lighten(@basered,10%);//基础色明度增加40%；
+@red:saturate(lighten(@basered,5%),-30%);//基础色明度增加40%；
 
 
 @red-l:spin(lighten(@red,10%),10);@red-lr:spin(lighten(@red,20%),15);@red-lrr:spin(lighten(@red,30%),20);
@@ -215,6 +215,15 @@ a{text-decoration: none!important;}
   }
 }
 
+.home-nav{font-size: 0; padding:5px;
+    li{display:inline-block; font-size: 1.4rem; width: 25%; text-align: center; padding:5px;
+        .item{background-color: @blue; padding:15px 0 10px 0; .t-white; .bdr; display:block;
+            .fa{font-size: 2.5rem; .t-white;}
+            .desc{margin:0; .t-white;}
+        }
+    }
+}
+
 .mui-popover{
   .fa,.iconfont{padding:0 1rem 0 0; color:@gray-d;}
 }
@@ -393,6 +402,7 @@ a{text-decoration: none!important;}
   .mui-card-content{
     p{text-indent: 2rem;}
   }
+  .mui-button{display:block; margin:20px auto; border: 1px solid @blue; width: 80%; background-color: @blue; color:@white;}
 }
 .card-cache{
   .mui-card-header{h3{text-align: center;width: 100%;}}
@@ -461,9 +471,9 @@ a{text-decoration: none!important;}
       .mui-control-item{display:table-cell; padding:0;}
     }
   }
-  .panel-body{padding:0 0 .5rem 0; position: relative;
+  .panel-body{padding:0 0 .5rem 0; position: relative; min-height: 350px;
     .mui-control-content{min-height: 270px;}
-    .mui-button{color:@blue; border: 1px solid @blue;&.check-all{background-color: @blue; color:@white; margin:50px auto;  display:block; width: 60%; }}
+    .mui-button{color:@blue; border: 1px solid @blue; margin:20px auto;  display:block;  width: 80%; &.check-all{background-color: @blue; color:@white; margin:50px auto; width: 60%; }}
     .episode-btn{position: absolute;  right:1rem; top:.8rem; 
       .mui-button{ float: left; margin-left:1rem;}
       .batch-confirm,.batch-cancel{display:none;}
@@ -598,6 +608,12 @@ a{text-decoration: none!important;}
     button.search-control{background-color: @gray-drr; color:@white; .bdr(5px 0 0 5px); position: absolute;left:0; top:0; border: none;line-height: 21px;height: 40px;padding: 10px 15px;
     &.search-comfirm{left:auto;right: 0; .bdr(0 5px 5px 0); .bg-blue;}
     
+    }
+  }
+  .keywrod-wrapper{
+    p.title{padding:10px 0 0 10px; font-size: 1.6rem;}
+    .keywrod{margin:0 0 20px 0;
+        li{display:inline-block; .bdr(30px); .bg-gray; .t-white; padding:5px 10px; margin:5px; a{.t-white;}}
     }
   }
   .mui-control-content{ position: absolute; top:110px; left:1rem; right:1rem; bottom:1rem; width: auto; overflow: hidden; .bdr(5px);

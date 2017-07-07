@@ -71,12 +71,36 @@
                     <button class="search-control search-comfirm">搜索</button>
                     <button class="search-control" id="offCanvasHide">取消</button>
                 </div>
-                <div class="mui-segmented-control mui-segmented-control-inverted">
+                <div class="keywrod-wrapper">
+                		<p class="title">历史搜索</p>
+            			<ul class="keywrod">
+            				<li><a href="#">世界上最后一个男人</a></li>
+            				<li>坚不可摧</li>
+            				<li>废材联盟</li>
+            				<li>Family Guy</li>
+            				<li>冰血暴</li>
+            			</ul>
+            			<p class="title">热门搜索</p>
+            			<ul class="keywrod">
+            				<li>权利的游戏</li>
+            				<li>行尸走肉</li>
+            				<li>传教士</li>
+            				<li>迷雾</li>
+            				<li>行尸之惧</li>
+            				<li>黑暗物质</li>
+            				<li>神奇女侠</li>
+            				<li>美国众神</li>
+            				<li>异形：契约</li>
+            				<li>硅谷</li>
+            				<li>生活大爆炸</li>
+            			</ul>
+                </div>
+                <div class="mui-segmented-control mui-segmented-control-inverted" style="display:none;">
                     <a class="mui-control-item mui-active" href="#search-box-1">影视</a>
                     <a class="mui-control-item" href="#search-box-2">资讯</a>
                     <a class="mui-control-item" href="#search-box-3">默认</a>
                 </div>
-                <div id="search-box-1" class="mui-control-content mui-scroll-wrapper mui-active">
+                <div id="search-box-1" class="mui-control-content mui-scroll-wrapper mui-active"  style="display:none;">
                     <div class="mui-scroll">
                     <ul class="play-list  play-list-col3 fixed-img">
                         <li>
@@ -270,8 +294,15 @@ document.querySelector('#navFav').addEventListener('tap',function(){navFav();});
 document.querySelector('#navPers').addEventListener('tap',function(){navPers();});
 document.querySelector('#navAbout').addEventListener('tap',function(){navAbout();});
 document.getElementById('offCanvasHide').addEventListener('tap', function() { offCanvasWrapper.offCanvas('close');});
+document.querySelector('.mui-icon-search').addEventListener('tap',function(){
+	//alert(123456);
+});
 
 document.querySelector('.loading-wrapper-full').addEventListener('tap',function(){$(".loading-wrapper-full").hide();});
+document.querySelector('.search-comfirm').addEventListener('tap',function(){
+	$(".mui-segmented-control,#search-box-1").show();
+	$(".keywrod-wrapper").hide();
+});
 document.querySelector('.mui-title').addEventListener('tap',function(){$(".loading-wrapper-full").show();});
 mui('.mui-scroll-wrapper').scroll({
  scrollY: true, //是否竖向滚动
